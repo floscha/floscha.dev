@@ -14,7 +14,7 @@ The goal of today's post is to dig into the Python's `functools.partial` object.
 Let's start by importing `partial` from Python's built-in `functools`.
 
 ```python
->>>from functools import partial
+>>> from functools import partial
 ```
 
 Next, we define a simplistic `multiply` method and a `times_two` `partial` object which fixes the multiplier to always be `2`.
