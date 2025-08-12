@@ -137,13 +137,28 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Github Copilot Auto Approve
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Introduction While the Copilot team has taken measures to prohibit the agent from executing disastrous commands, auto approving commands will always hold an inherent risk.
+Auto Approve Everything To auto approve all commands the agent intends to run, follow the steps below.
+Open the VS Code setting with cmd &#43; , In the Search settings text field, type chat auto approve Click the check box to enable the setting Again, in Search settings, type chat max requests For me, this setting was set at a default of 25 which was not sufficient for more sophisticated tasks, so I increased this value to 100 Auto Approve Selected Commands As described in this GitHub issue, the Copilot agent now supports explicit enabling and disabling of commands:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-08-12 00:00:00 +0000 UTC'>August 12, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to Github Copilot Auto Approve" href="http://localhost:1313/posts/github_copilot_auto_approve/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Exploring functools.partial
     </h2>
   </header>
   <div class="entry-content">
     <p>Introduction The goal of today’s post is to dig into the Python’s functools.partial object.
 Partial Basics Let’s start by importing partial from Python’s built-in functools.
-&gt;&gt;&gt;from functools import partial Next, we define a simplistic multiply method and a times_two partial object which fixes the multiplier to always be 2.
+&gt;&gt;&gt; from functools import partial Next, we define a simplistic multiply method and a times_two partial object which fixes the multiplier to always be 2.
 &gt;&gt;&gt; def multiply(a: int, b: int) -&gt; int: ... return a * b &gt;&gt;&gt; times_two = partial(multiply, b=2) &gt;&gt;&gt; times_two(3) 6 When inspecting the __name__ and __doc__ fields that regular Python methods always provide, we notice that for partial objects __name__ does not exists and __doc__ is set to some generic partial object default. So to have sensible values for the two fields, we have to set those ourselves.
 ...</p>
   </div>

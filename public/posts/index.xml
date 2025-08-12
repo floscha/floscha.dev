@@ -17,7 +17,7 @@
 &lt;p&gt;The goal of today&amp;rsquo;s post is to dig into the Python&amp;rsquo;s &lt;code&gt;functools.partial&lt;/code&gt; object.&lt;/p&gt;
 &lt;h2 id=&#34;partial-basics&#34;&gt;Partial Basics&lt;/h2&gt;
 &lt;p&gt;Let&amp;rsquo;s start by importing &lt;code&gt;partial&lt;/code&gt; from Python&amp;rsquo;s built-in &lt;code&gt;functools&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; functools &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; partial
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; functools &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; partial
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Next, we define a simplistic &lt;code&gt;multiply&lt;/code&gt; method and a &lt;code&gt;times_two&lt;/code&gt; &lt;code&gt;partial&lt;/code&gt; object which fixes the multiplier to always be &lt;code&gt;2&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;multiply&lt;/span&gt;(a: int, b: int) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; int:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;     &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; a &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; b
@@ -28,6 +28,29 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When inspecting the &lt;code&gt;__name__&lt;/code&gt; and &lt;code&gt;__doc__&lt;/code&gt; fields that regular Python methods always provide, we notice that for partial objects &lt;code&gt;__name__&lt;/code&gt; does not exists and &lt;code&gt;__doc__&lt;/code&gt; is set to some generic &lt;code&gt;partial&lt;/code&gt; object default.
 So to have sensible values for the two fields, we have to set those ourselves.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Github Copilot Auto Approve</title>
+      <link>http://localhost:1313/posts/github_copilot_auto_approve/</link>
+      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/github_copilot_auto_approve/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;auto-approve-everything&#34;&gt;Auto Approve Everything&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Open the VS Code setting with &lt;code&gt;cmd&lt;/code&gt; + &lt;code&gt;,&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In the &lt;em&gt;Search settings&lt;/em&gt; text field, type &lt;code&gt;chat auto approve&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;Click the check box to enable the setting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Again, in &lt;em&gt;Search settings&lt;/em&gt;, type &lt;code&gt;chat max requests&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;For me, this setting was set at a default of &lt;code&gt;25&lt;/code&gt; which was not sufficient for more sophisticated tasks, so I increased this value to &lt;code&gt;100&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;auto-approve-selected-commands&#34;&gt;Auto Approve Selected Commands&lt;/h2&gt;
+&lt;p&gt;As described &lt;a href=&#34;https://github.com/microsoft/vscode/issues/252496#issuecomment-3107360161&#34;&gt;this GitHub issue&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello World</title>
