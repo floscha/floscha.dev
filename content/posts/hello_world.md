@@ -2,6 +2,6 @@
 title: "Hello World"
 date: 2025-08-10
 draft: false
-ShowToc: true
+ShowToc: false
 ---
 Hello world, hej världen!

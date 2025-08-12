@@ -2,7 +2,7 @@
 title: "Github Copilot Auto Approve"
 date: 2025-08-12
 draft: false
-ShowToc: true
+ShowToc: false
 ---
 
 ## Introduction
