@@ -93,7 +93,7 @@ Traceback (most recent call last):
 AttributeError: 'functools.partial' object has no attribute '__annotations__'
 ```
 
-However, we can retrive the same output using the simply dict comprehension below.
+However, we can retrieve the same output using the simple dict comprehension below.
 
 ```python
 >>> {k: v for k, v in times_two.func.__annotations__.items() if k not in times_two.keywords}
