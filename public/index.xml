@@ -6,7 +6,37 @@
     <description>Recent content on floscha.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrate Hugo From PaperMod Theme to PaperModX</title>
+      <link>http://localhost:1313/posts/migrate-to-papermodx/</link>
+      <pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/migrate-to-papermodx/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;ve just switched my Hugo theme from &lt;a href=&#34;https://github.com/adityatelange/hugo-PaperMod&#34;&gt;PaperMod&lt;/a&gt; to &lt;a href=&#34;https://github.com/reorx/hugo-PaperModX&#34;&gt;PaperModX&lt;/a&gt; for the features listed on their repository.
+The steps to do so are pretty straightforward and listed below.&lt;/p&gt;
+&lt;h2 id=&#34;migration-steps&#34;&gt;Migration Steps&lt;/h2&gt;
+&lt;p&gt;First, add the theme as a sub-module.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule add https://github.com/reorx/hugo-PaperModX.git themes/PaperModX
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, change the Hugo theme to &lt;code&gt;PaperModX&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sed -i &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/^theme: PaperMod$/theme: PaperModX/&amp;#39;&lt;/span&gt; hugo.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, delete the now unused &lt;code&gt;PaperMod&lt;/code&gt; sub-module.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git rm themes/PaperMod
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>I&rsquo;ve just switched my Hugo theme from <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> to <a href="https://github.com/reorx/hugo-PaperModX">PaperModX</a> for the features listed on their repository.
+The steps to do so are pretty straightforward and listed below.</p>
+<h2 id="migration-steps">Migration Steps</h2>
+<p>First, add the theme as a sub-module.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git submodule add https://github.com/reorx/hugo-PaperModX.git themes/PaperModX
+</span></span></code></pre></div><p>Then, change the Hugo theme to <code>PaperModX</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#e6db74">&#39;s/^theme: PaperMod$/theme: PaperModX/&#39;</span> hugo.yaml
+</span></span></code></pre></div><p>Finally, delete the now unused <code>PaperMod</code> sub-module.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git rm themes/PaperMod
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
     <item>
       <title>Github Copilot Auto Approve</title>
       <link>http://localhost:1313/posts/github-copilot-auto-approve/</link>
