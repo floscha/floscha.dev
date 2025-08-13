@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github Copilot Auto Approve</title>
-      <link>http://localhost:1313/posts/github_copilot_auto_approve/</link>
+      <link>http://localhost:1313/posts/github-copilot-auto-approve/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/github_copilot_auto_approve/</guid>
+      <guid>http://localhost:1313/posts/github-copilot-auto-approve/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;While the Copilot team has taken &lt;a href=&#34;https://github.com/microsoft/vscode/issues/252496#issuecomment-3127077875&#34;&gt;measures&lt;/a&gt; to prohibit the agent from executing disastrous commands, auto approving commands will always hold an inherent risk.&lt;/p&gt;
 &lt;h2 id=&#34;auto-approve-everything&#34;&gt;Auto Approve Everything&lt;/h2&gt;
@@ -35,9 +35,9 @@
     </item>
     <item>
       <title>Exploring functools.partial</title>
-      <link>http://localhost:1313/posts/exploring_functools_partial/</link>
+      <link>http://localhost:1313/posts/exploring-functools-partial/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/exploring_functools_partial/</guid>
+      <guid>http://localhost:1313/posts/exploring-functools-partial/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;The goal of today&amp;rsquo;s post is to dig into the Python&amp;rsquo;s &lt;code&gt;functools.partial&lt;/code&gt; object.&lt;/p&gt;
 &lt;h2 id=&#34;partial-basics&#34;&gt;Partial Basics&lt;/h2&gt;
@@ -56,9 +56,9 @@ So to have sensible values for the two fields, we have to set those ourselves.&l
     </item>
     <item>
       <title>Hello World</title>
-      <link>http://localhost:1313/posts/hello_world/</link>
+      <link>http://localhost:1313/posts/hello-world/</link>
       <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hello_world/</guid>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
       <description>&lt;p&gt;Hello world, hej världen!&lt;/p&gt;</description>
     </item>
   </channel>

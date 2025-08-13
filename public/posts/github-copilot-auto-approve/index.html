@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head>
-	<meta name="generator" content="Hugo 0.148.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>floscha.dev</title>
+<title>Github Copilot Auto Approve | floscha.dev</title>
+<meta name="keywords" content="">
+<meta name="description" content="Introduction
+While the Copilot team has taken measures to prohibit the agent from executing disastrous commands, auto approving commands will always hold an inherent risk.
+Auto Approve Everything
+To auto approve all commands the agent intends to run, follow the steps below.
 
-<meta name="description" content="">
+Open the VS Code setting with cmd &#43; ,
+In the Search settings text field, type chat auto approve
+
+Click the check box to enable the setting
+
+
+Again, in Search settings, type chat max requests
+
+For me, this setting was set at a default of 25 which was not sufficient for more sophisticated tasks, so I increased this value to 100
+
+
+
+Auto Approve Selected Commands
+As described in this GitHub issue, the Copilot agent now supports explicit enabling and disabling of commands:">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/">
+<link rel="canonical" href="http://localhost:1313/posts/github-copilot-auto-approve/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.8fe10233a706bc87f2e08b3cf97b8bd4c0a80f10675a143675d59212121037c0.css" integrity="sha256-j&#43;ECM6cGvIfy4Is8&#43;XuL1MCoDxBnWhQ2ddWSEhIQN8A=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -19,8 +36,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/github-copilot-auto-approve/">
 <noscript>
     <style>
         #theme-toggle,
@@ -60,7 +76,7 @@
 </noscript>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -103,80 +119,49 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<article class="first-entry home-info">
-    <header class="entry-header">
-        <h1>👋 Hej, I&rsquo;m Flo.</h1>
-    </header>
-    <div class="entry-content">
-        Welcome to my website.
-    </div>
-    <footer class="entry-footer">
-        <div class="social-icons" >
-    <a href="https://github.com/floscha" target="_blank" rel="noopener noreferrer me"
-        title="Github">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-    </a>
-    <a href="mailto:florian.joh.schaefer@gmail.com" target="_blank" rel="noopener noreferrer me"
-        title="Email">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-    <polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-    </a>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Github Copilot Auto Approve
+    </h1>
+    <div class="post-meta"><span title='2025-08-12 00:00:00 +0000 UTC'>August 12, 2025</span>
+
 </div>
+  </header> 
+  <div class="post-content"><h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+<p>While the Copilot team has taken <a href="https://github.com/microsoft/vscode/issues/252496#issuecomment-3127077875">measures</a> to prohibit the agent from executing disastrous commands, auto approving commands will always hold an inherent risk.</p>
+<h2 id="auto-approve-everything">Auto Approve Everything<a hidden class="anchor" aria-hidden="true" href="#auto-approve-everything">#</a></h2>
+<p>To auto approve all commands the agent intends to run, follow the steps below.</p>
+<ul>
+<li>Open the VS Code setting with <code>cmd</code> + <code>,</code></li>
+<li>In the <em>Search settings</em> text field, type <code>chat auto approve</code>
+<ul>
+<li>Click the check box to enable the setting</li>
+</ul>
+</li>
+<li>Again, in <em>Search settings</em>, type <code>chat max requests</code>
+<ul>
+<li>For me, this setting was set at a default of <code>25</code> which was not sufficient for more sophisticated tasks, so I increased this value to <code>100</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="auto-approve-selected-commands">Auto Approve Selected Commands<a hidden class="anchor" aria-hidden="true" href="#auto-approve-selected-commands">#</a></h2>
+<p>As described in <a href="https://github.com/microsoft/vscode/issues/252496#issuecomment-3107360161">this GitHub issue</a>, the Copilot agent now supports explicit enabling and disabling of commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;chat.agent.terminal.autoApprove&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;foo&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;bar&#34;</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 
-    </footer>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Github Copilot Auto Approve
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Introduction While the Copilot team has taken measures to prohibit the agent from executing disastrous commands, auto approving commands will always hold an inherent risk.
-Auto Approve Everything To auto approve all commands the agent intends to run, follow the steps below.
-Open the VS Code setting with cmd &#43; , In the Search settings text field, type chat auto approve Click the check box to enable the setting Again, in Search settings, type chat max requests For me, this setting was set at a default of 25 which was not sufficient for more sophisticated tasks, so I increased this value to 100 Auto Approve Selected Commands As described in this GitHub issue, the Copilot agent now supports explicit enabling and disabling of commands:
-...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-08-12 00:00:00 +0000 UTC'>August 12, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Github Copilot Auto Approve" href="http://localhost:1313/posts/github-copilot-auto-approve/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Exploring functools.partial
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Introduction The goal of today’s post is to dig into the Python’s functools.partial object.
-Partial Basics Let’s start by importing partial from Python’s built-in functools.
-&gt;&gt;&gt; from functools import partial Next, we define a simplistic multiply method and a times_two partial object which fixes the multiplier to always be 2.
-&gt;&gt;&gt; def multiply(a: int, b: int) -&gt; int: ... return a * b &gt;&gt;&gt; times_two = partial(multiply, b=2) &gt;&gt;&gt; times_two(3) 6 When inspecting the __name__ and __doc__ fields that regular Python methods always provide, we notice that for partial objects __name__ does not exists and __doc__ is set to some generic partial object default. So to have sensible values for the two fields, we have to set those ourselves.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-08-11 00:00:00 +0000 UTC'>August 11, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Exploring functools.partial" href="http://localhost:1313/posts/exploring-functools-partial/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Hello World
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Hello world, hej världen!
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-08-10 00:00:00 +0000 UTC'>August 10, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Hello World" href="http://localhost:1313/posts/hello-world/"></a>
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
 </article>
     </main>
     
