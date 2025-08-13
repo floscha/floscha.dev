@@ -1,7 +1,7 @@
 baseURL: 'https://floscha.github.io/'
 languageCode: en-us
 title: floscha.dev
-theme: PaperMod
+theme: PaperModX
 params:
   homeInfoParams:
     Title: "👋 Hej, I'm Flo."

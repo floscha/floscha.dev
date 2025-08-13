@@ -4,8 +4,7 @@
     <title>Tags on floscha.dev</title>
     <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on floscha.dev</description>
-    <generator>Hugo -- 0.148.2</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
