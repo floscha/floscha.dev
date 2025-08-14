@@ -6,7 +6,64 @@
     <description>Recent content on floscha.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use just as a Git Pre-Commit Hook</title>
+      <link>http://localhost:1313/posts/use-just-as-a-git-pre-commit-hook/</link>
+      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/use-just-as-a-git-pre-commit-hook/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;As a fan of &lt;a href=&#34;https://www.gnu.org/software/make/manual/make.html&#34;&gt;make&lt;/a&gt;-like tools such as &lt;a href=&#34;https://github.com/casey/just&#34;&gt;just&lt;/a&gt; or &lt;a href=&#34;https://taskfile.dev/&#34;&gt;Task&lt;/a&gt; and appreciating the guardrails provided by Git &lt;a href=&#34;https://pre-commit.com/&#34;&gt;pre-commit&lt;/a&gt;, I dislike the redundancy of having to define commands like linting both in the &lt;code&gt;justfile&lt;/code&gt;/&lt;code&gt;taskfile&lt;/code&gt; as well as in the &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt;.
+To solve this, I&amp;rsquo;ve built a simple Git-native &lt;a href=&#34;https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks&#34;&gt;pre-commit hook&lt;/a&gt; which only delegates to a &lt;strong&gt;just&lt;/strong&gt; &lt;a href=&#34;https://just.systems/man/en/introduction.html&#34;&gt;recipe&lt;/a&gt; (in our case called &lt;code&gt;lint&lt;/code&gt;) where all the checks are defined.
+While the following examples use &lt;strong&gt;just&lt;/strong&gt;, they are easily adaptable to &lt;strong&gt;Task&lt;/strong&gt; or even good old &lt;strong&gt;make&lt;/strong&gt;.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>As a fan of <a href="https://www.gnu.org/software/make/manual/make.html">make</a>-like tools such as <a href="https://github.com/casey/just">just</a> or <a href="https://taskfile.dev/">Task</a> and appreciating the guardrails provided by Git <a href="https://pre-commit.com/">pre-commit</a>, I dislike the redundancy of having to define commands like linting both in the <code>justfile</code>/<code>taskfile</code> as well as in the <code>.pre-commit-config.yaml</code>.
+To solve this, I&rsquo;ve built a simple Git-native <a href="https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks">pre-commit hook</a> which only delegates to a <strong>just</strong> <a href="https://just.systems/man/en/introduction.html">recipe</a> (in our case called <code>lint</code>) where all the checks are defined.
+While the following examples use <strong>just</strong>, they are easily adaptable to <strong>Task</strong> or even good old <strong>make</strong>.</p>
+<h2 id="define-just-recipe">Define just Recipe</h2>
+<p>As a prerequisite, we need a <code>justfile</code> which contains all the checks we expect to pass (meaning the commands results in a <code>0</code> return code), before a new Git commit can be created.
+For a Python codebase this could look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>lint:
+</span></span><span style="display:flex;"><span>    just --fmt --unstable --check
+</span></span><span style="display:flex;"><span>    uvx ruff check
+</span></span><span style="display:flex;"><span>    uvx ruff format --check
+</span></span></code></pre></div><h2 id="set-up-pre-commit-hook">Set Up Pre-commit Hook</h2>
+<p>Within your repository, create a new file for the pre-commit hook using the editor of your choice. For VS Code, run</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>touch .git/hooks/pre-commit
+</span></span></code></pre></div><p>The <code>pre-commit</code> file should then have the following content.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Prevent commit if &#39;just lint&#39; recipe fails.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ! just lint; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Pre-commit check failed!&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>Finally, set the permissions such that the hook can be executed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chmod u+x .git/hooks/pre-commit
+</span></span></code></pre></div><h2 id="enabledisable-hook">Enable/Disable Hook</h2>
+<p>To disable the git hook, remove the permission to execute the script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chmod u-x .git/hooks/pre-commit
+</span></span></code></pre></div><p>Consequently, to re-enable the hook, add the permission again.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chmod u+x .git/hooks/pre-commit
+</span></span></code></pre></div><h2 id="bonus-putting-everything-in-a-justfile">Bonus: Putting Everything in a justfile</h2>
+<p>To not set up the pre-commit hook manually, you can also do this via a <code>enable-pre-commit</code> recipe.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>lint:
+</span></span><span style="display:flex;"><span>    just --fmt --unstable --check
+</span></span><span style="display:flex;"><span>    uvx ruff check
+</span></span><span style="display:flex;"><span>    uvx ruff format --check
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@enable-pre-commit:
+</span></span><span style="display:flex;"><span>    echo &#39;#!/bin/sh\n\n# Prevent commit if &#39;\&#39;&#39;just lint&#39;\&#39;&#39; recipe fails.\nif ! just lint; then\n    echo &#34;Pre-commit check failed!&#34;\n    exit 1\nfi&#39; &gt; .git/hooks/pre-commit
+</span></span><span style="display:flex;"><span>    chmod u+x .git/hooks/pre-commit
+</span></span><span style="display:flex;"><span>    @echo &#34;Pre-commit hook enabled.&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@disable-pre-commit:
+</span></span><span style="display:flex;"><span>    chmod u-x .git/hooks/pre-commit
+</span></span><span style="display:flex;"><span>    @echo &#34;Pre-commit hook disabled.&#34;
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
     <item>
       <title>Migrate Hugo From PaperMod Theme to PaperModX</title>
       <link>http://localhost:1313/posts/migrate-to-papermodx/</link>

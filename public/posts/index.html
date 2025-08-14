@@ -194,6 +194,45 @@ function toggleThemeListener() {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Use just as a Git Pre-Commit Hook
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>Introduction As a fan of make-like tools such as just or Task and appreciating the guardrails provided by Git pre-commit, I dislike the redundancy of having to define commands like linting both in the justfile/taskfile as well as in the .pre-commit-config.yaml. To solve this, I’ve built a simple Git-native pre-commit hook which only delegates to a just recipe (in our case called lint) where all the checks are defined. While the following examples use just, they are easily adaptable to Task or even good old make.
+...</p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>August 14, 2025</span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to Use just as a Git Pre-Commit Hook" href="http://localhost:1313/posts/use-just-as-a-git-pre-commit-hook/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Migrate Hugo From PaperMod Theme to PaperModX
+    </h2>
+  </header>
+  <section class="entry-content">
+    
+      <p>Introduction I’ve just switched my Hugo theme from PaperMod to PaperModX for the features listed on their repository. The steps to do so are pretty straightforward and listed below.
+Migration Steps First, add the theme as a sub-module.
+git submodule add https://github.com/reorx/hugo-PaperModX.git themes/PaperModX Then, change the Hugo theme to PaperModX.
+sed -i &#39;&#39; &#39;s/^theme: PaperMod$/theme: PaperModX/&#39; hugo.yaml Finally, delete the now unused PaperMod sub-module.
+git rm themes/PaperMod </p>
+    
+  </section>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>August 13, 2025</span></span>
+</footer>
+  <a class="entry-link" aria-label="post link to Migrate Hugo From PaperMod Theme to PaperModX" href="http://localhost:1313/posts/migrate-to-papermodx/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Github Copilot Auto Approve
     </h2>
   </header>
