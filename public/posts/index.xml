@@ -6,7 +6,64 @@
     <description>Recent content in Posts on floscha.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Study With AI</title>
+      <link>http://localhost:1313/posts/study-with-ai/</link>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/study-with-ai/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This post describes how I use several AI tools to help me study topics of any kind.&lt;/p&gt;
+&lt;p&gt;For this, I usually go through the following 3 steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Assemble the learing material with GitHub Copilot&lt;/li&gt;
+&lt;li&gt;Create cards with AI Studio&lt;/li&gt;
+&lt;li&gt;Create audio summary with &lt;a href=&#34;https://notebooklm.google.com/&#34;&gt;NotebookLM&lt;/a&gt; and AI Studio&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;assemble-learning-material&#34;&gt;Assemble Learning Material&lt;/h2&gt;
+&lt;p&gt;First, I collect all the study material I already have.
+For topics where I don&amp;rsquo;t have any material or just need a lot more, I use an agentic tool like GitHub Copilot which I am most comfortable with as a software engineer.
+Also, running the agent locally has the benefit that you can easily split your material across multiple files instead of bundling it in a large response.
+In the future however, I should also try with approach with other agentic tools like ChatGPT Deep Research.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>This post describes how I use several AI tools to help me study topics of any kind.</p>
+<p>For this, I usually go through the following 3 steps:</p>
+<ol>
+<li>Assemble the learing material with GitHub Copilot</li>
+<li>Create cards with AI Studio</li>
+<li>Create audio summary with <a href="https://notebooklm.google.com/">NotebookLM</a> and AI Studio</li>
+</ol>
+<h2 id="assemble-learning-material">Assemble Learning Material</h2>
+<p>First, I collect all the study material I already have.
+For topics where I don&rsquo;t have any material or just need a lot more, I use an agentic tool like GitHub Copilot which I am most comfortable with as a software engineer.
+Also, running the agent locally has the benefit that you can easily split your material across multiple files instead of bundling it in a large response.
+In the future however, I should also try with approach with other agentic tools like ChatGPT Deep Research.</p>
+<p>I then pass the agent a prompt similar to this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Based on the topics and subtopics represented as topics below, for each bullet, create a comprehensive section, explaining all related concepts in detail. Take your information from &lt;some-related-website&gt; and all sub pages. Create a markdown file for each topic. Place the markdown files in a &lt;name-of-the-subject&gt; folder.
+</span></span></code></pre></div><p>This leaves you with an organized number of markdown files which can already be used for studying by themselves.</p>
+<h2 id="create-cards">Create Cards</h2>
+<p>Next, we use the markdown files to create flashcard for the <a href="https://mochi.cards/">Mochi</a> app, which lets you easily import cards for studying using <a href="https://en.wikipedia.org/wiki/Spaced_repetition">spaced repetition</a>.</p>
+<p>The can be achived with the same local agent as above using this prompt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>For each topic markdown file, create flashcards in csv format, where the first column is the question and the second column the answer. Do not use headers.
+</span></span></code></pre></div><p>These CSV files can then be imported in Mochi using <strong>Import</strong> menu and the <strong>CSV</strong> option.
+Make sure to set <strong>Quote</strong> to <code>&quot;</code>.</p>
+<h2 id="create-audio-summary">Create Audio Summary</h2>
+<p>Create a new notebook for each topic in <a href="https://notebooklm.google.com/">NotebookLM</a> and either upload the markdown file or copy its content via <strong>Paste text &gt; Copied text</strong>.
+Then, click on <strong>Audio Overview</strong> to create a podcast based on the imported study material.</p>
+<p>While the interaxction of the two virtual podcast hosts can be entertaining, I often prefer a more concise single-speaker audio summary, which we can obtain using the following steps (inspired by <a href="https://www.youtube.com/watch?v=qbt-MFVvQQY">Tina Huang</a>):</p>
+<ul>
+<li>Download the podcast audio file in the playback section of NotebookLM.</li>
+<li>Import the audio file in a tool like <a href="https://aistudio.google.com/">AI Studio</a>.</li>
+<li>Transcribe it using a prompt like <code>Accurately transcribe the uploaded podcast with two speakers. Do not use timestamps.</code></li>
+<li><code>Convert this transcript into a single host format and remove all extraneous information and commentary. Stay concise but do not remove any facts. Write it such that it can be read by a single speaker.</code></li>
+<li>Copy the output.</li>
+<li>Go to <strong>Generate Media &gt; Generate speech</strong> and paste the output from the previous step.</li>
+<li>Wait until the generation has finished and either listen in AI Studio or download the audio to listen offline.</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Use just as a Git Pre-Commit Hook</title>
       <link>http://localhost:1313/posts/use-just-as-a-git-pre-commit-hook/</link>
