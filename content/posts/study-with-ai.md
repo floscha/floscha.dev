@@ -1,7 +1,6 @@
 ---
 title: "How I Study With AI"
 date: 2025-08-15
-ShowToc: false
 ---
 
 ## Introduction

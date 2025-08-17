@@ -1,7 +1,6 @@
 ---
 title: "Github Copilot Auto Approve"
 date: 2025-08-12
-ShowToc: false
 ---
 
 ## Introduction

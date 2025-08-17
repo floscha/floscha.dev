@@ -1,7 +1,6 @@
 ---
 title: "Use just as a Git Pre-Commit Hook"
 date: 2025-08-14
-ShowToc: false
 ---
 
 ## Introduction

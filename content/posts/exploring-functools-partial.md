@@ -1,7 +1,6 @@
 ---
 title: "Exploring functools.partial"
 date: 2025-08-11
-ShowToc: false
 ---
 
 ## Introduction

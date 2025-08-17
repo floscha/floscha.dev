@@ -14,15 +14,15 @@
   <meta name="theme-color">
 
   
-  <title>How I Study With AI &middot; floscha.dev</title>
-    <meta name="title" content="How I Study With AI &middot; floscha.dev">
+  <title>About me &middot; floscha.dev</title>
+    <meta name="title" content="About me &middot; floscha.dev">
 
   
   <meta name="description" content="My awesome website">
   
   
   
-  <link rel="canonical" href="http://localhost:1313/posts/study-with-ai/">
+  <link rel="canonical" href="http://localhost:1313/about/">
   
   
   
@@ -91,46 +91,43 @@
   
 
   
-  <meta property="og:url" content="http://localhost:1313/posts/study-with-ai/">
+  <meta property="og:url" content="http://localhost:1313/about/">
   <meta property="og:site_name" content="floscha.dev">
-  <meta property="og:title" content="How I Study With AI">
+  <meta property="og:title" content="About me">
   <meta property="og:description" content="My awesome website">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-08-15T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-08-15T00:00:00+00:00">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="How I Study With AI">
+  <meta name="twitter:title" content="About me">
   <meta name="twitter:description" content="My awesome website">
 
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Posts",
-    "name": "How I Study With AI",
-    "headline": "How I Study With AI",
+    "articleSection": "floscha.dev",
+    "name": "About me",
+    "headline": "About me",
     
     
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/posts\/study-with-ai\/",
+    "url" : "http:\/\/localhost:1313\/about\/",
     "author" : {
       "@type": "Person",
       "name": "Florian Schäfer"
     },
-    "copyrightYear": "2025",
-    "dateCreated": "2025-08-15T00:00:00\u002b00:00",
-    "datePublished": "2025-08-15T00:00:00\u002b00:00",
     
-    "dateModified": "2025-08-15T00:00:00\u002b00:00",
+    
+    
+    
+    
     
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "495"
+    "wordCount": "4"
   }]
   </script>
 
@@ -396,342 +393,20 @@
     <div class="relative flex flex-col grow">
       <main id="main-content" class="grow">
         
-  
-  <article>
-    
-    
-
-    
-    <header id="single_header" class="mt-5 max-w-prose">
+  <article class="max-w-full">
+    <header>
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        How I Study With AI
+        About me
       </h1>
-      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
-        
-
-
-
-
-
-  
-  
-
-
-
-  
-
-  
-  
-  
-
-  
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-
-  
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2025-08-15T00:00:00&#43;00:00">15 August 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-
-  
-  
-
-  
-  
-
-
-
-      </div>
-      
     </header>
+    <section class="max-w-full mt-6 prose dark:prose-invert">
+      <p>Some things about me&hellip;</p>
 
-    
-    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-      
-      
-      
-      
-      
-
-
-      <div class="min-w-0 min-h-0 max-w-fit">
-        
-
-        <div class="article-content max-w-prose mb-20">
-          
-<h2 class="relative group">Introduction 
-    <div id="introduction" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#introduction" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>This post describes how I use several AI tools to help me study topics of any kind.</p>
-<p>For this, I usually go through the following 3 steps:</p>
-<ol>
-<li>Assemble the learning material with GitHub Copilot</li>
-<li>Create cards with AI Studio</li>
-<li>Create audio summary with <a
-  href="https://notebooklm.google.com/"
-    target="_blank"
-  >NotebookLM</a> and AI Studio</li>
-</ol>
-
-<h2 class="relative group">Assemble Learning Material 
-    <div id="assemble-learning-material" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#assemble-learning-material" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>First, I collect all the study material I already have.
-For topics where I don&rsquo;t have any material or just need a lot more, I use an agentic tool like GitHub Copilot, which I am most comfortable with as a software engineer.
-Also, running the agent locally has the benefit that you can easily split your material across multiple files instead of bundling it in a large response.
-In the future, however, I should also try this approach with other agentic tools like ChatGPT Deep Research.</p>
-<p>I then pass the agent a prompt similar to this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">Based on the topics and subtopics represented as topics below, for each bullet, create a comprehensive section, explaining all related concepts in detail. Take your information from &lt;some-related-website&gt; and all sub pages. Create a markdown file for each topic. Place the markdown files in a &lt;name-of-the-subject&gt; folder.
-</span></span></code></pre></div><p>This leaves you with an organized number of markdown files which can already be used for studying by themselves.</p>
-
-<h2 class="relative group">Create Cards 
-    <div id="create-cards" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#create-cards" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Next, we use the markdown files to create flashcards for the <a
-  href="https://mochi.cards/"
-    target="_blank"
-  >Mochi</a> app, which lets you easily import cards for studying using <a
-  href="https://en.wikipedia.org/wiki/Spaced_repetition"
-    target="_blank"
-  >spaced repetition</a>.</p>
-<p>This can be achieved with the same local agent as above using this prompt:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">For each topic markdown file, create flashcards in csv format, where the first column is the question and the second column the answer. Do not use headers.
-</span></span></code></pre></div><p>These CSV files can then be imported in Mochi using the <strong>Import</strong> menu and the <strong>CSV</strong> option.
-Make sure to set <strong>Quote</strong> to <code>&quot;</code>.</p>
-
-<h2 class="relative group">Create Audio Summary 
-    <div id="create-audio-summary" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#create-audio-summary" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Create a new notebook for each topic in <a
-  href="https://notebooklm.google.com/"
-    target="_blank"
-  >NotebookLM</a> and either upload the markdown file or copy its content via <strong>Paste text &gt; Copied text</strong>.
-Then, click on <strong>Audio Overview</strong> to create a podcast based on the imported study material.</p>
-<p>While the interaction of the two virtual podcast hosts can be entertaining, I often prefer a more concise single-speaker audio summary, which we can obtain using the following steps (inspired by <a
-  href="https://www.youtube.com/watch?v=qbt-MFVvQQY"
-    target="_blank"
-  >Tina Huang</a>):</p>
-<ul>
-<li>Download the podcast audio file in the playback section of NotebookLM.</li>
-<li>Import the audio file in a tool like <a
-  href="https://aistudio.google.com/"
-    target="_blank"
-  >AI Studio</a>.</li>
-<li>Transcribe it using a prompt like <code>Accurately transcribe the uploaded podcast with two speakers. Do not use timestamps.</code></li>
-<li><code>Convert this transcript into a single host format and remove all extraneous information and commentary. Stay concise but do not remove any facts. Write it such that it can be read by a single speaker.</code></li>
-<li>Copy the output.</li>
-<li>Go to <strong>Generate Media &gt; Generate speech</strong> and paste the output from the previous step.</li>
-<li>Wait until the generation has finished and either listen in AI Studio or download the audio to listen offline.</li>
-</ul>
-
-          
-          
-          
-        </div>
-        
-          
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-    
-    
-<div class="flex author">
-  
-  <div class="place-self-center">
-    
-      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
-        Author
-      </div>
-      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
-        Florian Schäfer
-      </div>
-    
-    
-      <div class="text-sm text-neutral-700 dark:text-neutral-400">Welcome to my website.</div>
-    
-    <div class="text-2xl sm:text-lg">
-  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
-    
-      
-        <a
-          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
-          href="https://github.com/floscha"
-          target="_blank"
-          aria-label="Github"
-          rel="me noopener noreferrer"
-          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-</span></span></a
-        >
-      
-    
-  </div>
-
-</div>
-  </div>
-</div>
-
-  
-
-  
-
-  
-    <div class="mb-10"></div>
-  
-
-        
-        
-
-        
-
-        
-
-      </div>
-
-      
-      
-        
-        
-          
-          
-        
-        
-        
-        <script
-          type="text/javascript"
-          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
-          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts/study-with-ai.md"
-          data-oid-likes="likes_posts/study-with-ai.md"></script>
-      
     </section>
-
-    
-    <footer class="pt-8 max-w-prose print:hidden">
+    <footer class="pt-8">
       
-  
-    
-    
-    
-    <div class="pt-8">
-      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
-      <div class="flex justify-between pt-3">
-        <span>
-          
-            <a class="flex group mr-3" href="/posts/use-just-as-a-git-pre-commit-hook/">
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span class="flex flex-col">
-                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Use just as a Git Pre-Commit Hook</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-08-14T00:00:00&#43;00:00">14 August 2025</time>
-                  
-                </span>
-              </span>
-            </a>
-          
-        </span>
-        <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/uv-scripts-with-raycast/">
-              <span class="flex flex-col">
-                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Using uv Scripts with Raycast</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-08-17T00:00:00&#43;00:00">17 August 2025</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
-          
-        </span>
-      </div>
-    </div>
-  
 
-
-      
     </footer>
   </article>
 

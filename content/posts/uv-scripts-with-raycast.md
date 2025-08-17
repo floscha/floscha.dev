@@ -1,7 +1,6 @@
 ---
 title: "Using uv Scripts with Raycast"
 date: 2025-08-17
-ShowToc: false
 ---
 
 ## Introduction

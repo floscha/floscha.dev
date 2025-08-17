@@ -1,385 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on floscha.dev</title>
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on floscha.dev</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <managingEditor>florian.joh.schaefer@gmail.com (Florian Schäfer)</managingEditor>
+    <webMaster>florian.joh.schaefer@gmail.com (Florian Schäfer)</webMaster>
+    <copyright>© 2025 Florian Schäfer</copyright>
     <lastBuildDate>Sun, 17 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>Using uv Scripts with Raycast</title>
       <link>http://localhost:1313/posts/uv-scripts-with-raycast/</link>
       <pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate>
-      
+      <author>florian.joh.schaefer@gmail.com (Florian Schäfer)</author>
       <guid>http://localhost:1313/posts/uv-scripts-with-raycast/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;I have various scripts for smaller automations&lt;/p&gt;
-&lt;p&gt;How to launch them? Open a terminal is kinda tedious
-Solution: Raycast&lt;/p&gt;
-&lt;h2 id=&#34;prerequistes&#34;&gt;Prerequistes&lt;/h2&gt;
-&lt;p&gt;Open &lt;strong&gt;Raycast Setting&lt;/strong&gt;, &lt;strong&gt;Add New&lt;/strong&gt;, &lt;strong&gt;Add Script Directory&lt;/strong&gt;
-Select the direcotry on your machine where you want to store the files.&lt;/p&gt;
-&lt;h2 id=&#34;creating-a-new-script&#34;&gt;Creating a new script&lt;/h2&gt;
-&lt;p&gt;I use the following template:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/usr/bin/env -S uv run&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# @raycast.schemaVersion 1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# @raycast.title Copy Markdown Link&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# @raycast.mode silent&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# /// script&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# dependencies = [&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#   &amp;#34;some-dependency==1.0.0&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ///&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# TODO: Put your code here!&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The first line makes it a uv script and lets you execute it with &lt;code&gt;./my_script.py&lt;/code&gt; without requiring adding &lt;code&gt;python&lt;/code&gt; or &lt;code&gt;uv run&lt;/code&gt;.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>I have various scripts for smaller automations</p>
-<p>How to launch them? Open a terminal is kinda tedious
-Solution: Raycast</p>
-<h2 id="prerequistes">Prerequistes</h2>
-<p>Open <strong>Raycast Setting</strong>, <strong>Add New</strong>, <strong>Add Script Directory</strong>
-Select the direcotry on your machine where you want to store the files.</p>
-<h2 id="creating-a-new-script">Creating a new script</h2>
-<p>I use the following template:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env -S uv run</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.schemaVersion 1</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.title Copy Markdown Link</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.mode silent</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># /// script</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># dependencies = [</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;some-dependency==1.0.0&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ///</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># TODO: Put your code here!</span>
-</span></span></code></pre></div><p>The first line makes it a uv script and lets you execute it with <code>./my_script.py</code> without requiring adding <code>python</code> or <code>uv run</code>.</p>
-<p>Next, the columns with <code># @raycast</code> add the required meta data for the script to be run as a Raycast script:</p>
-<ul>
-<li><code>@raycast.schemaVersion</code> adds the schema version and for the time being should alsways be <code>1</code>.</li>
-<li><code>@raycast.title</code> sets the title to be dispayed in Raycast.</li>
-<li><code>@raycast.mode</code> defines how the output of the script is displayed in Raycast. For details see <a href=""></a>.</li>
-</ul>
-<p>Then, the <code>/// script</code> block is used by uv to define dependencies and also the required Python version can be set here.
-While excacpt versions for dependencies are optional, they are recommended to make the script more reproducable independent of what systems it is run on.</p>
-<p>Bonus tips: Create a <a href="https://manual.raycast.com/snippets">Raycast Snippet</a> using the template to quickly create future scripts.</p>
-<h2 id="using-the-script">Using the script</h2>
-<p>When saving the script to the earlier defined script directory, Raycast will automatically find it by searching for the text you&rsquo;ve used for <code>@raycast.title</code>.
-You can then also find it in <strong>Settings</strong> under <strong>Extensions</strong> where you can assign a hotkey to the script.</p>
-<h2 id="full-example">Full Example</h2>
-<p>The following shows the full implementation of the markdown link script, I&rsquo;ve mentioned in the introduction.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env -S uv run</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.schemaVersion 1</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.title Copy Markdown Link</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.mode silent</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># /// script</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># dependencies = [</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;sh&#34;,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ///</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sh <span style="color:#f92672">import</span> osascript
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
-</span></span><span style="display:flex;"><span>    page_title <span style="color:#f92672">=</span> osascript(e<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;tell application &#34;Google Chrome&#34; to get title of active tab of first window&#39;</span>)<span style="color:#f92672">.</span>strip()
-</span></span><span style="display:flex;"><span>    page_url <span style="color:#f92672">=</span> osascript(e<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;tell application &#34;Google Chrome&#34; to get URL of active tab of first window&#39;</span>)<span style="color:#f92672">.</span>strip()
-</span></span><span style="display:flex;"><span>    markdown_link <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[</span><span style="color:#e6db74">{</span>page_title<span style="color:#e6db74">}</span><span style="color:#e6db74">](</span><span style="color:#e6db74">{</span>page_url<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
-</span></span><span style="display:flex;"><span>    osascript(e<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;set the clipboard to &#34;</span><span style="color:#e6db74">{</span>markdown_link<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;📋 Successfully copied </span><span style="color:#e6db74">{</span>markdown_link<span style="color:#e6db74">}</span><span style="color:#e6db74"> to clipboard.&#34;</span>)
-</span></span></code></pre></div>]]></content:encoded>
+      <description></description>
+      
     </item>
     
     <item>
       <title>How I Study With AI</title>
       <link>http://localhost:1313/posts/study-with-ai/</link>
       <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
-      
+      <author>florian.joh.schaefer@gmail.com (Florian Schäfer)</author>
       <guid>http://localhost:1313/posts/study-with-ai/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;This post describes how I use several AI tools to help me study topics of any kind.&lt;/p&gt;
-&lt;p&gt;For this, I usually go through the following 3 steps:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Assemble the learning material with GitHub Copilot&lt;/li&gt;
-&lt;li&gt;Create cards with AI Studio&lt;/li&gt;
-&lt;li&gt;Create audio summary with &lt;a href=&#34;https://notebooklm.google.com/&#34;&gt;NotebookLM&lt;/a&gt; and AI Studio&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;assemble-learning-material&#34;&gt;Assemble Learning Material&lt;/h2&gt;
-&lt;p&gt;First, I collect all the study material I already have.
-For topics where I don&amp;rsquo;t have any material or just need a lot more, I use an agentic tool like GitHub Copilot, which I am most comfortable with as a software engineer.
-Also, running the agent locally has the benefit that you can easily split your material across multiple files instead of bundling it in a large response.
-In the future, however, I should also try this approach with other agentic tools like ChatGPT Deep Research.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>This post describes how I use several AI tools to help me study topics of any kind.</p>
-<p>For this, I usually go through the following 3 steps:</p>
-<ol>
-<li>Assemble the learning material with GitHub Copilot</li>
-<li>Create cards with AI Studio</li>
-<li>Create audio summary with <a href="https://notebooklm.google.com/">NotebookLM</a> and AI Studio</li>
-</ol>
-<h2 id="assemble-learning-material">Assemble Learning Material</h2>
-<p>First, I collect all the study material I already have.
-For topics where I don&rsquo;t have any material or just need a lot more, I use an agentic tool like GitHub Copilot, which I am most comfortable with as a software engineer.
-Also, running the agent locally has the benefit that you can easily split your material across multiple files instead of bundling it in a large response.
-In the future, however, I should also try this approach with other agentic tools like ChatGPT Deep Research.</p>
-<p>I then pass the agent a prompt similar to this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Based on the topics and subtopics represented as topics below, for each bullet, create a comprehensive section, explaining all related concepts in detail. Take your information from &lt;some-related-website&gt; and all sub pages. Create a markdown file for each topic. Place the markdown files in a &lt;name-of-the-subject&gt; folder.
-</span></span></code></pre></div><p>This leaves you with an organized number of markdown files which can already be used for studying by themselves.</p>
-<h2 id="create-cards">Create Cards</h2>
-<p>Next, we use the markdown files to create flashcards for the <a href="https://mochi.cards/">Mochi</a> app, which lets you easily import cards for studying using <a href="https://en.wikipedia.org/wiki/Spaced_repetition">spaced repetition</a>.</p>
-<p>This can be achieved with the same local agent as above using this prompt:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>For each topic markdown file, create flashcards in csv format, where the first column is the question and the second column the answer. Do not use headers.
-</span></span></code></pre></div><p>These CSV files can then be imported in Mochi using the <strong>Import</strong> menu and the <strong>CSV</strong> option.
-Make sure to set <strong>Quote</strong> to <code>&quot;</code>.</p>
-<h2 id="create-audio-summary">Create Audio Summary</h2>
-<p>Create a new notebook for each topic in <a href="https://notebooklm.google.com/">NotebookLM</a> and either upload the markdown file or copy its content via <strong>Paste text &gt; Copied text</strong>.
-Then, click on <strong>Audio Overview</strong> to create a podcast based on the imported study material.</p>
-<p>While the interaction of the two virtual podcast hosts can be entertaining, I often prefer a more concise single-speaker audio summary, which we can obtain using the following steps (inspired by <a href="https://www.youtube.com/watch?v=qbt-MFVvQQY">Tina Huang</a>):</p>
-<ul>
-<li>Download the podcast audio file in the playback section of NotebookLM.</li>
-<li>Import the audio file in a tool like <a href="https://aistudio.google.com/">AI Studio</a>.</li>
-<li>Transcribe it using a prompt like <code>Accurately transcribe the uploaded podcast with two speakers. Do not use timestamps.</code></li>
-<li><code>Convert this transcript into a single host format and remove all extraneous information and commentary. Stay concise but do not remove any facts. Write it such that it can be read by a single speaker.</code></li>
-<li>Copy the output.</li>
-<li>Go to <strong>Generate Media &gt; Generate speech</strong> and paste the output from the previous step.</li>
-<li>Wait until the generation has finished and either listen in AI Studio or download the audio to listen offline.</li>
-</ul>
-]]></content:encoded>
+      <description></description>
+      
     </item>
     
     <item>
       <title>Use just as a Git Pre-Commit Hook</title>
       <link>http://localhost:1313/posts/use-just-as-a-git-pre-commit-hook/</link>
       <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
-      
+      <author>florian.joh.schaefer@gmail.com (Florian Schäfer)</author>
       <guid>http://localhost:1313/posts/use-just-as-a-git-pre-commit-hook/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;As a fan of &lt;a href=&#34;https://www.gnu.org/software/make/manual/make.html&#34;&gt;make&lt;/a&gt;-like tools such as &lt;a href=&#34;https://github.com/casey/just&#34;&gt;just&lt;/a&gt; or &lt;a href=&#34;https://taskfile.dev/&#34;&gt;Task&lt;/a&gt; and appreciating the guardrails provided by Git &lt;a href=&#34;https://pre-commit.com/&#34;&gt;pre-commit&lt;/a&gt;, I dislike the redundancy of having to define commands like linting both in the &lt;code&gt;justfile&lt;/code&gt;/&lt;code&gt;taskfile&lt;/code&gt; as well as in the &lt;code&gt;.pre-commit-config.yaml&lt;/code&gt;.
-To solve this, I&amp;rsquo;ve built a simple Git-native &lt;a href=&#34;https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks&#34;&gt;pre-commit hook&lt;/a&gt; which only delegates to a &lt;strong&gt;just&lt;/strong&gt; &lt;a href=&#34;https://just.systems/man/en/introduction.html&#34;&gt;recipe&lt;/a&gt; (in our case called &lt;code&gt;lint&lt;/code&gt;) where all the checks are defined.
-While the following examples use &lt;strong&gt;just&lt;/strong&gt;, they are easily adaptable to &lt;strong&gt;Task&lt;/strong&gt; or even good old &lt;strong&gt;make&lt;/strong&gt;.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>As a fan of <a href="https://www.gnu.org/software/make/manual/make.html">make</a>-like tools such as <a href="https://github.com/casey/just">just</a> or <a href="https://taskfile.dev/">Task</a> and appreciating the guardrails provided by Git <a href="https://pre-commit.com/">pre-commit</a>, I dislike the redundancy of having to define commands like linting both in the <code>justfile</code>/<code>taskfile</code> as well as in the <code>.pre-commit-config.yaml</code>.
-To solve this, I&rsquo;ve built a simple Git-native <a href="https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks">pre-commit hook</a> which only delegates to a <strong>just</strong> <a href="https://just.systems/man/en/introduction.html">recipe</a> (in our case called <code>lint</code>) where all the checks are defined.
-While the following examples use <strong>just</strong>, they are easily adaptable to <strong>Task</strong> or even good old <strong>make</strong>.</p>
-<h2 id="define-just-recipe">Define just Recipe</h2>
-<p>As a prerequisite, we need a <code>justfile</code> which contains all the checks we expect to pass (meaning the commands results in a <code>0</code> return code), before a new Git commit can be created.
-For a Python codebase this could look like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>lint:
-</span></span><span style="display:flex;"><span>    just --fmt --unstable --check
-</span></span><span style="display:flex;"><span>    uvx ruff check
-</span></span><span style="display:flex;"><span>    uvx ruff format --check
-</span></span></code></pre></div><h2 id="set-up-pre-commit-hook">Set Up Pre-commit Hook</h2>
-<p>Within your repository, create a new file for the pre-commit hook using the editor of your choice. For VS Code, run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>touch .git/hooks/pre-commit
-</span></span></code></pre></div><p>The <code>pre-commit</code> file should then have the following content.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Prevent commit if &#39;just lint&#39; recipe fails.</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ! just lint; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Pre-commit check failed!&#34;</span>
-</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span></code></pre></div><p>Finally, set the permissions such that the hook can be executed.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chmod u+x .git/hooks/pre-commit
-</span></span></code></pre></div><h2 id="enabledisable-hook">Enable/Disable Hook</h2>
-<p>To disable the git hook, remove the permission to execute the script.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chmod u-x .git/hooks/pre-commit
-</span></span></code></pre></div><p>Consequently, to re-enable the hook, add the permission again.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chmod u+x .git/hooks/pre-commit
-</span></span></code></pre></div><h2 id="bonus-putting-everything-in-a-justfile">Bonus: Putting Everything in a justfile</h2>
-<p>To not set up the pre-commit hook manually, you can also do this via a <code>enable-pre-commit</code> recipe.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>lint:
-</span></span><span style="display:flex;"><span>    just --fmt --unstable --check
-</span></span><span style="display:flex;"><span>    uvx ruff check
-</span></span><span style="display:flex;"><span>    uvx ruff format --check
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>@enable-pre-commit:
-</span></span><span style="display:flex;"><span>    echo &#39;#!/bin/sh\n\n# Prevent commit if &#39;\&#39;&#39;just lint&#39;\&#39;&#39; recipe fails.\nif ! just lint; then\n    echo &#34;Pre-commit check failed!&#34;\n    exit 1\nfi&#39; &gt; .git/hooks/pre-commit
-</span></span><span style="display:flex;"><span>    chmod u+x .git/hooks/pre-commit
-</span></span><span style="display:flex;"><span>    @echo &#34;Pre-commit hook enabled.&#34;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>@disable-pre-commit:
-</span></span><span style="display:flex;"><span>    chmod u-x .git/hooks/pre-commit
-</span></span><span style="display:flex;"><span>    @echo &#34;Pre-commit hook disabled.&#34;
-</span></span></code></pre></div>]]></content:encoded>
+      <description></description>
+      
     </item>
     
     <item>
       <title>Migrate Hugo From PaperMod Theme to PaperModX</title>
       <link>http://localhost:1313/posts/migrate-to-papermodx/</link>
       <pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate>
-      
+      <author>florian.joh.schaefer@gmail.com (Florian Schäfer)</author>
       <guid>http://localhost:1313/posts/migrate-to-papermodx/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;I&amp;rsquo;ve just switched my Hugo theme from &lt;a href=&#34;https://github.com/adityatelange/hugo-PaperMod&#34;&gt;PaperMod&lt;/a&gt; to &lt;a href=&#34;https://github.com/reorx/hugo-PaperModX&#34;&gt;PaperModX&lt;/a&gt; for the features listed on their repository.
-The steps to do so are pretty straightforward and listed below.&lt;/p&gt;
-&lt;h2 id=&#34;migration-steps&#34;&gt;Migration Steps&lt;/h2&gt;
-&lt;p&gt;First, add the theme as a sub-module.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule add https://github.com/reorx/hugo-PaperModX.git themes/PaperModX
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, change the Hugo theme to &lt;code&gt;PaperModX&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sed -i &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/^theme: PaperMod$/theme: PaperModX/&amp;#39;&lt;/span&gt; hugo.yaml
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, delete the now unused &lt;code&gt;PaperMod&lt;/code&gt; sub-module.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git rm themes/PaperMod
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-      <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>I&rsquo;ve just switched my Hugo theme from <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> to <a href="https://github.com/reorx/hugo-PaperModX">PaperModX</a> for the features listed on their repository.
-The steps to do so are pretty straightforward and listed below.</p>
-<h2 id="migration-steps">Migration Steps</h2>
-<p>First, add the theme as a sub-module.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git submodule add https://github.com/reorx/hugo-PaperModX.git themes/PaperModX
-</span></span></code></pre></div><p>Then, change the Hugo theme to <code>PaperModX</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#e6db74">&#39;s/^theme: PaperMod$/theme: PaperModX/&#39;</span> hugo.yaml
-</span></span></code></pre></div><p>Finally, delete the now unused <code>PaperMod</code> sub-module.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git rm themes/PaperMod
-</span></span></code></pre></div>]]></content:encoded>
+      <description></description>
+      
     </item>
     
     <item>
       <title>Github Copilot Auto Approve</title>
       <link>http://localhost:1313/posts/github-copilot-auto-approve/</link>
       <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
-      
+      <author>florian.joh.schaefer@gmail.com (Florian Schäfer)</author>
       <guid>http://localhost:1313/posts/github-copilot-auto-approve/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;While the Copilot team has taken &lt;a href=&#34;https://github.com/microsoft/vscode/issues/252496#issuecomment-3127077875&#34;&gt;measures&lt;/a&gt; to prohibit the agent from executing disastrous commands, auto approving commands will always hold an inherent risk.&lt;/p&gt;
-&lt;h2 id=&#34;auto-approve-everything&#34;&gt;Auto Approve Everything&lt;/h2&gt;
-&lt;p&gt;To auto approve all commands the agent intends to run, follow the steps below.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Open the VS Code setting with &lt;code&gt;cmd&lt;/code&gt; + &lt;code&gt;,&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;In the &lt;em&gt;Search settings&lt;/em&gt; text field, type &lt;code&gt;chat auto approve&lt;/code&gt;
-&lt;ul&gt;
-&lt;li&gt;Click the check box to enable the setting&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Again, in &lt;em&gt;Search settings&lt;/em&gt;, type &lt;code&gt;chat max requests&lt;/code&gt;
-&lt;ul&gt;
-&lt;li&gt;For me, this setting was set at a default of &lt;code&gt;25&lt;/code&gt; which was not sufficient for more sophisticated tasks, so I increased this value to &lt;code&gt;100&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;auto-approve-selected-commands&#34;&gt;Auto Approve Selected Commands&lt;/h2&gt;
-&lt;p&gt;As described in &lt;a href=&#34;https://github.com/microsoft/vscode/issues/252496#issuecomment-3107360161&#34;&gt;this GitHub issue&lt;/a&gt;, the Copilot agent now supports explicit enabling and disabling of commands:&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>While the Copilot team has taken <a href="https://github.com/microsoft/vscode/issues/252496#issuecomment-3127077875">measures</a> to prohibit the agent from executing disastrous commands, auto approving commands will always hold an inherent risk.</p>
-<h2 id="auto-approve-everything">Auto Approve Everything</h2>
-<p>To auto approve all commands the agent intends to run, follow the steps below.</p>
-<ul>
-<li>Open the VS Code setting with <code>cmd</code> + <code>,</code></li>
-<li>In the <em>Search settings</em> text field, type <code>chat auto approve</code>
-<ul>
-<li>Click the check box to enable the setting</li>
-</ul>
-</li>
-<li>Again, in <em>Search settings</em>, type <code>chat max requests</code>
-<ul>
-<li>For me, this setting was set at a default of <code>25</code> which was not sufficient for more sophisticated tasks, so I increased this value to <code>100</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="auto-approve-selected-commands">Auto Approve Selected Commands</h2>
-<p>As described in <a href="https://github.com/microsoft/vscode/issues/252496#issuecomment-3107360161">this GitHub issue</a>, the Copilot agent now supports explicit enabling and disabling of commands:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;chat.agent.terminal.autoApprove&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;foo&#34;</span>: <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;bar&#34;</span>: <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>]]></content:encoded>
+      <description></description>
+      
     </item>
     
     <item>
       <title>Exploring functools.partial</title>
       <link>http://localhost:1313/posts/exploring-functools-partial/</link>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      
+      <author>florian.joh.schaefer@gmail.com (Florian Schäfer)</author>
       <guid>http://localhost:1313/posts/exploring-functools-partial/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The goal of today&amp;rsquo;s post is to dig into the Python&amp;rsquo;s &lt;code&gt;functools.partial&lt;/code&gt; object.&lt;/p&gt;
-&lt;h2 id=&#34;partial-basics&#34;&gt;Partial Basics&lt;/h2&gt;
-&lt;p&gt;Let&amp;rsquo;s start by importing &lt;code&gt;partial&lt;/code&gt; from Python&amp;rsquo;s built-in &lt;code&gt;functools&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; functools &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; partial
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Next, we define a simplistic &lt;code&gt;multiply&lt;/code&gt; method and a &lt;code&gt;times_two&lt;/code&gt; &lt;code&gt;partial&lt;/code&gt; object which fixes the multiplier to always be &lt;code&gt;2&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;multiply&lt;/span&gt;(a: int, b: int) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; int:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;     &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; a &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; b
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; times_two &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; partial(multiply, b&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; times_two(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When inspecting the &lt;code&gt;__name__&lt;/code&gt; and &lt;code&gt;__doc__&lt;/code&gt; fields that regular Python methods always provide, we notice that for partial objects &lt;code&gt;__name__&lt;/code&gt; does not exists and &lt;code&gt;__doc__&lt;/code&gt; is set to some generic &lt;code&gt;partial&lt;/code&gt; object default.
-So to have sensible values for the two fields, we have to set those ourselves.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>The goal of today&rsquo;s post is to dig into the Python&rsquo;s <code>functools.partial</code> object.</p>
-<h2 id="partial-basics">Partial Basics</h2>
-<p>Let&rsquo;s start by importing <code>partial</code> from Python&rsquo;s built-in <code>functools</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> partial
-</span></span></code></pre></div><p>Next, we define a simplistic <code>multiply</code> method and a <code>times_two</code> <code>partial</code> object which fixes the multiplier to always be <code>2</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">multiply</span>(a: int, b: int) <span style="color:#f92672">-&gt;</span> int:
-</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>     <span style="color:#66d9ef">return</span> a <span style="color:#f92672">*</span> b
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two <span style="color:#f92672">=</span> partial(multiply, b<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two(<span style="color:#ae81ff">3</span>)
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span>
-</span></span></code></pre></div><p>When inspecting the <code>__name__</code> and <code>__doc__</code> fields that regular Python methods always provide, we notice that for partial objects <code>__name__</code> does not exists and <code>__doc__</code> is set to some generic <code>partial</code> object default.
-So to have sensible values for the two fields, we have to set those ourselves.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two<span style="color:#f92672">.</span>__name__
-</span></span><span style="display:flex;"><span>Traceback (most recent call last):
-</span></span><span style="display:flex;"><span>  File <span style="color:#e6db74">&#34;&lt;stdin&gt;&#34;</span>, line <span style="color:#ae81ff">1</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">AttributeError</span>: <span style="color:#e6db74">&#39;functools.partial&#39;</span> object has no attribute <span style="color:#e6db74">&#39;__name__&#39;</span><span style="color:#f92672">.</span> Did you mean: <span style="color:#e6db74">&#39;__ne__&#39;</span><span style="color:#960050;background-color:#1e0010">?</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two<span style="color:#f92672">.</span>__name__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;times_two&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two<span style="color:#f92672">.</span>__name__
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;times_two&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two<span style="color:#f92672">.</span>__doc__
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;partial(func, *args, **keywords) - new function with partial application</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">    of the given arguments and keywords.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two<span style="color:#f92672">.</span>__doc__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Multiply the given value times two.&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two<span style="color:#f92672">.</span>__doc__
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;Multiply the given value times two.&#39;</span>
-</span></span></code></pre></div><p>When printing our <code>times_two</code> partial we get the name of the class together with a reference to the original method and the arguments that we&rsquo;ve fixed for our <code>partial</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two
-</span></span><span style="display:flex;"><span>functools<span style="color:#f92672">.</span>partial(<span style="color:#f92672">&lt;</span>function multiply at <span style="color:#ae81ff">0x101358900</span><span style="color:#f92672">&gt;</span>, b<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
-</span></span></code></pre></div><p>We can also get those latter two explicitly, using the <code>.func</code> and <code>keywords</code> fields of <code>partial</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two<span style="color:#f92672">.</span>func
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>function multiply at <span style="color:#ae81ff">0x101358900</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two<span style="color:#f92672">.</span>keywords
-</span></span><span style="display:flex;"><span>{<span style="color:#e6db74">&#39;b&#39;</span>: <span style="color:#ae81ff">2</span>}
-</span></span></code></pre></div><p>If we had used <code>partial</code> with non-keyword arguments (like <code>partial(multiply, 2)</code>, which would&rsquo;ve set <code>a</code> to <code>2</code>), those values would show up in the <code>.args</code> field.
-Since we&rsquo;ve only used keyword arguments however, <code>args</code> will be an empty tuple in our case.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two<span style="color:#f92672">.</span>args
-</span></span><span style="display:flex;"><span>()
-</span></span></code></pre></div><h2 id="partial-with-types">Partial With Types</h2>
-<p>If we ask Python for the type of the partial, it will simply tell us it&rsquo;s a <code>functools.partial</code> object.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> type(times_two)
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">functools</span><span style="color:#f92672">.</span>partial<span style="color:#e6db74">&#39;&gt;</span>
-</span></span></code></pre></div><p>And while we can get the argument names with their types as well the return type from a regular Python method using <code>&lt;method_name&gt;.__annotations__</code>, this dunder method is not provided for <code>partial</code> objects.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> times_two<span style="color:#f92672">.</span>__annotations__
-</span></span><span style="display:flex;"><span>Traceback (most recent call last):
-</span></span><span style="display:flex;"><span>  File <span style="color:#e6db74">&#34;&lt;stdin&gt;&#34;</span>, line <span style="color:#ae81ff">1</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">AttributeError</span>: <span style="color:#e6db74">&#39;functools.partial&#39;</span> object has no attribute <span style="color:#e6db74">&#39;__annotations__&#39;</span>
-</span></span></code></pre></div><p>However, we can retrieve the same output using the simple dict comprehension below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> {k: v <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> times_two<span style="color:#f92672">.</span>func<span style="color:#f92672">.</span>__annotations__<span style="color:#f92672">.</span>items() <span style="color:#66d9ef">if</span> k <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> times_two<span style="color:#f92672">.</span>keywords}
-</span></span><span style="display:flex;"><span>{<span style="color:#e6db74">&#39;a&#39;</span>: <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">int</span><span style="color:#e6db74">&#39;&gt;, &#39;</span><span style="color:#66d9ef">return</span><span style="color:#e6db74">&#39;: &lt;class &#39;</span>int<span style="color:#e6db74">&#39;&gt;}</span>
-</span></span></code></pre></div>]]></content:encoded>
+      <description></description>
+      
     </item>
     
     <item>
       <title>Hello World</title>
       <link>http://localhost:1313/posts/hello-world/</link>
       <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      
+      <author>florian.joh.schaefer@gmail.com (Florian Schäfer)</author>
       <guid>http://localhost:1313/posts/hello-world/</guid>
-      <description>&lt;p&gt;Hello world, hej världen!&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>Hello world, hej världen!</p>
-]]></content:encoded>
+      <description></description>
+      
     </item>
     
   </channel>

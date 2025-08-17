@@ -1,36 +1,64 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-08-17T00:00:00+00:00</lastmod>
-  </url><url>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-08-17T00:00:00+00:00</lastmod>
-  </url><url>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/uv-scripts-with-raycast/</loc>
     <lastmod>2025-08-17T00:00:00+00:00</lastmod>
-  </url><url>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/study-with-ai/</loc>
     <lastmod>2025-08-15T00:00:00+00:00</lastmod>
-  </url><url>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/use-just-as-a-git-pre-commit-hook/</loc>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
-  </url><url>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/migrate-to-papermodx/</loc>
     <lastmod>2025-08-13T00:00:00+00:00</lastmod>
-  </url><url>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/github-copilot-auto-approve/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
-  </url><url>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/exploring-functools-partial/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
-  </url><url>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/hello-world/</loc>
     <lastmod>2025-08-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/about/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

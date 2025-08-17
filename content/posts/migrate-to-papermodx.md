@@ -1,7 +1,6 @@
 ---
 title: "Migrate Hugo From PaperMod Theme to PaperModX"
 date: 2025-08-13
-ShowToc: false
 ---
 
 ## Introduction
