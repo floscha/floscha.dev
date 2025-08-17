@@ -6,7 +6,86 @@
     <description>Recent content on floscha.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using uv Scripts with Raycast</title>
+      <link>http://localhost:1313/posts/uv-scripts-with-raycast/</link>
+      <pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/uv-scripts-with-raycast/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Over the years, I have accumulated various scripts for smaller automations.
+One pretty trivial example is a script which takes the currently opened browser tab and stores the markdown link to this page (something like &lt;code&gt;[Page Title](example.com)&lt;/code&gt;) in the clipboard.&lt;/p&gt;
+&lt;p&gt;Most of these are written in Python but I neither want to spend time managing virtual environments nor global dependencies.
+Fortunately, &lt;a href=&#34;https://docs.astral.sh/uv/guides/scripts/#using-a-shebang-to-create-an-executable-file&#34;&gt;uv scripts&lt;/a&gt; are an excellent tool for the job since they automatically create an virtual environment for the script but cache dependencies to not having to install all depencencies for every additional script.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>Over the years, I have accumulated various scripts for smaller automations.
+One pretty trivial example is a script which takes the currently opened browser tab and stores the markdown link to this page (something like <code>[Page Title](example.com)</code>) in the clipboard.</p>
+<p>Most of these are written in Python but I neither want to spend time managing virtual environments nor global dependencies.
+Fortunately, <a href="https://docs.astral.sh/uv/guides/scripts/#using-a-shebang-to-create-an-executable-file">uv scripts</a> are an excellent tool for the job since they automatically create an virtual environment for the script but cache dependencies to not having to install all depencencies for every additional script.</p>
+<p>The remaining question is how to launch those scripts.
+An obvious answer would be to use a terminal but opening an extra terminal window was too much friction for me (even when using Quake-like terminals such as Ghostty&rsquo;s <a href="https://hachyderm.io/@mitchellh/113222119716853963">Quick Terminal</a>).
+The perfect solution for me are Raycast&rsquo;s <a href="https://www.raycast.com/blog/getting-started-with-script-commands">Script Commands</a>.
+Since I&rsquo;m already using Raycast for many of its features, this didn&rsquo;t require me to install additional software but instead allows me to run commands conveniently from a familiar interface.</p>
+<p>This post will provide a full walkthrough on how to use uv and Raycast to launch arbitrary Python scripts using a command bar interface.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To use custom scripts with Raycast, all you have to do is tell it where those scripts are located.
+To do so, open <strong>Raycast Settings</strong>, <strong>Add New</strong>, <strong>Add Script Directory</strong>.
+Then, the directory on your machine where you want to store the files.</p>
+<h2 id="creating-a-new-script">Creating a new script</h2>
+<p>For new scripts, I always use the following template which covers all required boilerplate code and let&rsquo;s you get straight to coding the actual functionality.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env -S uv run</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.schemaVersion 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.title Copy Markdown Link</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.mode silent</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># /// script</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dependencies = [</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;some-dependency==1.0.0&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ///</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TODO: Put your code here!</span>
+</span></span></code></pre></div><p>The first line makes it a <a href="https://docs.astral.sh/uv/guides/scripts/#using-a-shebang-to-create-an-executable-file">uv script</a> and lets you execute it with <code>./my_script.py</code> instead of requiring to add <code>python</code> or <code>uv run</code> (make sure to adjust the permissions with <code>chmod u+x my_script</code>).</p>
+<p>Next, the comments with <code>@raycast</code> add the required metadata for the script to be run as a Raycast script:</p>
+<ul>
+<li><code>@raycast.schemaVersion</code> adds the schema version and for the time being should always be <code>1</code>.</li>
+<li><code>@raycast.title</code> sets the title to be displayed in Raycast.</li>
+<li><code>@raycast.mode</code> defines how the output of the script is displayed in Raycast. For details see <a href="https://github.com/raycast/script-commands/blob/master/documentation/OUTPUTMODES.md">Output Modes</a>.</li>
+</ul>
+<p>Then, the <code>/// script</code> block is used by uv to define dependencies and the required Python version can also be set here.
+While exact versions for dependencies are optional, they are recommended to make the script more reproducible independent of what systems it is run on.</p>
+<p>Bonus tip: Create a <a href="https://manual.raycast.com/snippets">Raycast Snippet</a> for the template to quickly create future scripts.</p>
+<h2 id="using-the-script">Using the script</h2>
+<p>When saving the script to the earlier defined script directory, Raycast will automatically find it by searching for the text you&rsquo;ve used for <code>@raycast.title</code>.
+You can then also find it in <strong>Settings</strong> under <strong>Extensions</strong> where you can assign a hotkey to the script.</p>
+<h2 id="full-example">Full Example</h2>
+<p>The following code shows the full implementation of the <em>markdown link</em> script I&rsquo;ve mentioned in the introduction.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env -S uv run</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.schemaVersion 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.title Copy Markdown Link</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.mode silent</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># /// script</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dependencies = [</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;sh&#34;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ///</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sh <span style="color:#f92672">import</span> osascript
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    page_title <span style="color:#f92672">=</span> osascript(e<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;tell application &#34;Google Chrome&#34; to get title of active tab of first window&#39;</span>)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>    page_url <span style="color:#f92672">=</span> osascript(e<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;tell application &#34;Google Chrome&#34; to get URL of active tab of first window&#39;</span>)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>    markdown_link <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[</span><span style="color:#e6db74">{</span>page_title<span style="color:#e6db74">}</span><span style="color:#e6db74">](</span><span style="color:#e6db74">{</span>page_url<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
+</span></span><span style="display:flex;"><span>    osascript(e<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;set the clipboard to &#34;</span><span style="color:#e6db74">{</span>markdown_link<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;📋 Successfully copied </span><span style="color:#e6db74">{</span>markdown_link<span style="color:#e6db74">}</span><span style="color:#e6db74"> to clipboard.&#34;</span>)
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
     <item>
       <title>How I Study With AI</title>
       <link>http://localhost:1313/posts/study-with-ai/</link>

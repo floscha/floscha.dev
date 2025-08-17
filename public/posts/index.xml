@@ -6,7 +6,97 @@
     <description>Recent content in Posts on floscha.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using uv Scripts with Raycast</title>
+      <link>http://localhost:1313/posts/uv-scripts-with-raycast/</link>
+      <pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/uv-scripts-with-raycast/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I have various scripts for smaller automations&lt;/p&gt;
+&lt;p&gt;How to launch them? Open a terminal is kinda tedious
+Solution: Raycast&lt;/p&gt;
+&lt;h2 id=&#34;prerequistes&#34;&gt;Prerequistes&lt;/h2&gt;
+&lt;p&gt;Open &lt;strong&gt;Raycast Setting&lt;/strong&gt;, &lt;strong&gt;Add New&lt;/strong&gt;, &lt;strong&gt;Add Script Directory&lt;/strong&gt;
+Select the direcotry on your machine where you want to store the files.&lt;/p&gt;
+&lt;h2 id=&#34;creating-a-new-script&#34;&gt;Creating a new script&lt;/h2&gt;
+&lt;p&gt;I use the following template:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/usr/bin/env -S uv run&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# @raycast.schemaVersion 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# @raycast.title Copy Markdown Link&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# @raycast.mode silent&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# /// script&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# dependencies = [&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#   &amp;#34;some-dependency==1.0.0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ///&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# TODO: Put your code here!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The first line makes it a uv script and lets you execute it with &lt;code&gt;./my_script.py&lt;/code&gt; without requiring adding &lt;code&gt;python&lt;/code&gt; or &lt;code&gt;uv run&lt;/code&gt;.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>I have various scripts for smaller automations</p>
+<p>How to launch them? Open a terminal is kinda tedious
+Solution: Raycast</p>
+<h2 id="prerequistes">Prerequistes</h2>
+<p>Open <strong>Raycast Setting</strong>, <strong>Add New</strong>, <strong>Add Script Directory</strong>
+Select the direcotry on your machine where you want to store the files.</p>
+<h2 id="creating-a-new-script">Creating a new script</h2>
+<p>I use the following template:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env -S uv run</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.schemaVersion 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.title Copy Markdown Link</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.mode silent</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># /// script</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dependencies = [</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;some-dependency==1.0.0&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ///</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TODO: Put your code here!</span>
+</span></span></code></pre></div><p>The first line makes it a uv script and lets you execute it with <code>./my_script.py</code> without requiring adding <code>python</code> or <code>uv run</code>.</p>
+<p>Next, the columns with <code># @raycast</code> add the required meta data for the script to be run as a Raycast script:</p>
+<ul>
+<li><code>@raycast.schemaVersion</code> adds the schema version and for the time being should alsways be <code>1</code>.</li>
+<li><code>@raycast.title</code> sets the title to be dispayed in Raycast.</li>
+<li><code>@raycast.mode</code> defines how the output of the script is displayed in Raycast. For details see <a href=""></a>.</li>
+</ul>
+<p>Then, the <code>/// script</code> block is used by uv to define dependencies and also the required Python version can be set here.
+While excacpt versions for dependencies are optional, they are recommended to make the script more reproducable independent of what systems it is run on.</p>
+<p>Bonus tips: Create a <a href="https://manual.raycast.com/snippets">Raycast Snippet</a> using the template to quickly create future scripts.</p>
+<h2 id="using-the-script">Using the script</h2>
+<p>When saving the script to the earlier defined script directory, Raycast will automatically find it by searching for the text you&rsquo;ve used for <code>@raycast.title</code>.
+You can then also find it in <strong>Settings</strong> under <strong>Extensions</strong> where you can assign a hotkey to the script.</p>
+<h2 id="full-example">Full Example</h2>
+<p>The following shows the full implementation of the markdown link script, I&rsquo;ve mentioned in the introduction.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env -S uv run</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.schemaVersion 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.title Copy Markdown Link</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># @raycast.mode silent</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># /// script</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dependencies = [</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   &#34;sh&#34;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ///</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sh <span style="color:#f92672">import</span> osascript
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    page_title <span style="color:#f92672">=</span> osascript(e<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;tell application &#34;Google Chrome&#34; to get title of active tab of first window&#39;</span>)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>    page_url <span style="color:#f92672">=</span> osascript(e<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;tell application &#34;Google Chrome&#34; to get URL of active tab of first window&#39;</span>)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>    markdown_link <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[</span><span style="color:#e6db74">{</span>page_title<span style="color:#e6db74">}</span><span style="color:#e6db74">](</span><span style="color:#e6db74">{</span>page_url<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
+</span></span><span style="display:flex;"><span>    osascript(e<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;set the clipboard to &#34;</span><span style="color:#e6db74">{</span>markdown_link<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;📋 Successfully copied </span><span style="color:#e6db74">{</span>markdown_link<span style="color:#e6db74">}</span><span style="color:#e6db74"> to clipboard.&#34;</span>)
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
     <item>
       <title>How I Study With AI</title>
       <link>http://localhost:1313/posts/study-with-ai/</link>
@@ -17,41 +107,41 @@
 &lt;p&gt;This post describes how I use several AI tools to help me study topics of any kind.&lt;/p&gt;
 &lt;p&gt;For this, I usually go through the following 3 steps:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Assemble the learing material with GitHub Copilot&lt;/li&gt;
+&lt;li&gt;Assemble the learning material with GitHub Copilot&lt;/li&gt;
 &lt;li&gt;Create cards with AI Studio&lt;/li&gt;
 &lt;li&gt;Create audio summary with &lt;a href=&#34;https://notebooklm.google.com/&#34;&gt;NotebookLM&lt;/a&gt; and AI Studio&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;assemble-learning-material&#34;&gt;Assemble Learning Material&lt;/h2&gt;
 &lt;p&gt;First, I collect all the study material I already have.
-For topics where I don&amp;rsquo;t have any material or just need a lot more, I use an agentic tool like GitHub Copilot which I am most comfortable with as a software engineer.
+For topics where I don&amp;rsquo;t have any material or just need a lot more, I use an agentic tool like GitHub Copilot, which I am most comfortable with as a software engineer.
 Also, running the agent locally has the benefit that you can easily split your material across multiple files instead of bundling it in a large response.
-In the future however, I should also try with approach with other agentic tools like ChatGPT Deep Research.&lt;/p&gt;</description>
+In the future, however, I should also try this approach with other agentic tools like ChatGPT Deep Research.&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="introduction">Introduction</h2>
 <p>This post describes how I use several AI tools to help me study topics of any kind.</p>
 <p>For this, I usually go through the following 3 steps:</p>
 <ol>
-<li>Assemble the learing material with GitHub Copilot</li>
+<li>Assemble the learning material with GitHub Copilot</li>
 <li>Create cards with AI Studio</li>
 <li>Create audio summary with <a href="https://notebooklm.google.com/">NotebookLM</a> and AI Studio</li>
 </ol>
 <h2 id="assemble-learning-material">Assemble Learning Material</h2>
 <p>First, I collect all the study material I already have.
-For topics where I don&rsquo;t have any material or just need a lot more, I use an agentic tool like GitHub Copilot which I am most comfortable with as a software engineer.
+For topics where I don&rsquo;t have any material or just need a lot more, I use an agentic tool like GitHub Copilot, which I am most comfortable with as a software engineer.
 Also, running the agent locally has the benefit that you can easily split your material across multiple files instead of bundling it in a large response.
-In the future however, I should also try with approach with other agentic tools like ChatGPT Deep Research.</p>
+In the future, however, I should also try this approach with other agentic tools like ChatGPT Deep Research.</p>
 <p>I then pass the agent a prompt similar to this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Based on the topics and subtopics represented as topics below, for each bullet, create a comprehensive section, explaining all related concepts in detail. Take your information from &lt;some-related-website&gt; and all sub pages. Create a markdown file for each topic. Place the markdown files in a &lt;name-of-the-subject&gt; folder.
 </span></span></code></pre></div><p>This leaves you with an organized number of markdown files which can already be used for studying by themselves.</p>
 <h2 id="create-cards">Create Cards</h2>
-<p>Next, we use the markdown files to create flashcard for the <a href="https://mochi.cards/">Mochi</a> app, which lets you easily import cards for studying using <a href="https://en.wikipedia.org/wiki/Spaced_repetition">spaced repetition</a>.</p>
-<p>The can be achived with the same local agent as above using this prompt:</p>
+<p>Next, we use the markdown files to create flashcards for the <a href="https://mochi.cards/">Mochi</a> app, which lets you easily import cards for studying using <a href="https://en.wikipedia.org/wiki/Spaced_repetition">spaced repetition</a>.</p>
+<p>This can be achieved with the same local agent as above using this prompt:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>For each topic markdown file, create flashcards in csv format, where the first column is the question and the second column the answer. Do not use headers.
-</span></span></code></pre></div><p>These CSV files can then be imported in Mochi using <strong>Import</strong> menu and the <strong>CSV</strong> option.
+</span></span></code></pre></div><p>These CSV files can then be imported in Mochi using the <strong>Import</strong> menu and the <strong>CSV</strong> option.
 Make sure to set <strong>Quote</strong> to <code>&quot;</code>.</p>
 <h2 id="create-audio-summary">Create Audio Summary</h2>
 <p>Create a new notebook for each topic in <a href="https://notebooklm.google.com/">NotebookLM</a> and either upload the markdown file or copy its content via <strong>Paste text &gt; Copied text</strong>.
 Then, click on <strong>Audio Overview</strong> to create a podcast based on the imported study material.</p>
-<p>While the interaxction of the two virtual podcast hosts can be entertaining, I often prefer a more concise single-speaker audio summary, which we can obtain using the following steps (inspired by <a href="https://www.youtube.com/watch?v=qbt-MFVvQQY">Tina Huang</a>):</p>
+<p>While the interaction of the two virtual podcast hosts can be entertaining, I often prefer a more concise single-speaker audio summary, which we can obtain using the following steps (inspired by <a href="https://www.youtube.com/watch?v=qbt-MFVvQQY">Tina Huang</a>):</p>
 <ul>
 <li>Download the podcast audio file in the playback section of NotebookLM.</li>
 <li>Import the audio file in a tool like <a href="https://aistudio.google.com/">AI Studio</a>.</li>
