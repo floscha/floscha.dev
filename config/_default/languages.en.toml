@@ -17,7 +17,7 @@ title = "floscha.dev"
 [params.author]
   name = "Florian Schäfer"
   email = "florian.joh.schaefer@gmail.com"
-#   image = "img/blowfish_logo.png"
+  image = "hero.png"
 #   imageQuality = 96
   headline = "👋 Hej, I’m Flo."
   bio = "Welcome to my website."
