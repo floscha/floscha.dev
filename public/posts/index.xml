@@ -9,7 +9,17 @@
     <managingEditor>florian.joh.schaefer@gmail.com (Florian Schäfer)</managingEditor>
     <webMaster>florian.joh.schaefer@gmail.com (Florian Schäfer)</webMaster>
     <copyright>© 2025 Florian Schäfer</copyright>
-    <lastBuildDate>Sun, 17 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Building an Audiobook Generator With Google Gemini</title>
+      <link>http://localhost:1313/posts/building-an-audiobook-generator/</link>
+      <pubDate>Tue, 19 Aug 2025 00:00:00 +0000</pubDate>
+      <author>florian.joh.schaefer@gmail.com (Florian Schäfer)</author>
+      <guid>http://localhost:1313/posts/building-an-audiobook-generator/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Using uv Scripts with Raycast</title>

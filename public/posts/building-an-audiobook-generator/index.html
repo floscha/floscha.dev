@@ -14,15 +14,15 @@
   <meta name="theme-color">
 
   
-  <title>Using uv Scripts with Raycast &middot; floscha.dev</title>
-    <meta name="title" content="Using uv Scripts with Raycast &middot; floscha.dev">
+  <title>Building an Audiobook Generator With Google Gemini &middot; floscha.dev</title>
+    <meta name="title" content="Building an Audiobook Generator With Google Gemini &middot; floscha.dev">
 
   
   <meta name="description" content="My awesome website">
   
   
   
-  <link rel="canonical" href="http://localhost:1313/posts/uv-scripts-with-raycast/">
+  <link rel="canonical" href="http://localhost:1313/posts/building-an-audiobook-generator/">
   
   
   
@@ -91,19 +91,19 @@
   
 
   
-  <meta property="og:url" content="http://localhost:1313/posts/uv-scripts-with-raycast/">
+  <meta property="og:url" content="http://localhost:1313/posts/building-an-audiobook-generator/">
   <meta property="og:site_name" content="floscha.dev">
-  <meta property="og:title" content="Using uv Scripts with Raycast">
+  <meta property="og:title" content="Building an Audiobook Generator With Google Gemini">
   <meta property="og:description" content="My awesome website">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-08-17T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-08-17T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-08-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-08-19T00:00:00+00:00">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Using uv Scripts with Raycast">
+  <meta name="twitter:title" content="Building an Audiobook Generator With Google Gemini">
   <meta name="twitter:description" content="My awesome website">
 
   <script type="application/ld+json">
@@ -111,26 +111,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Using uv Scripts with Raycast",
-    "headline": "Using uv Scripts with Raycast",
+    "name": "Building an Audiobook Generator With Google Gemini",
+    "headline": "Building an Audiobook Generator With Google Gemini",
     
     
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/posts\/uv-scripts-with-raycast\/",
+    "url" : "http:\/\/localhost:1313\/posts\/building-an-audiobook-generator\/",
     "author" : {
       "@type": "Person",
       "name": "Florian Schäfer"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-08-17T00:00:00\u002b00:00",
-    "datePublished": "2025-08-17T00:00:00\u002b00:00",
+    "dateCreated": "2025-08-19T00:00:00\u002b00:00",
+    "datePublished": "2025-08-19T00:00:00\u002b00:00",
     
-    "dateModified": "2025-08-17T00:00:00\u002b00:00",
+    "dateModified": "2025-08-19T00:00:00\u002b00:00",
     
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "612"
+    "wordCount": "606"
   }]
   </script>
 
@@ -405,7 +405,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Using uv Scripts with Raycast
+        Building an Audiobook Generator With Google Gemini
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -456,7 +456,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-08-17T00:00:00&#43;00:00">17 August 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+      <time datetime="2025-08-19T00:00:00&#43;00:00">19 August 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
     
 
     
@@ -500,125 +500,114 @@
     </span>        
     
 </h2>
-<p>Over the years, I have accumulated various scripts for smaller automations.
-One pretty trivial example is a script which takes the currently opened browser tab and stores the markdown link to this page (something like <code>[Page Title](example.com)</code>) in the clipboard.</p>
-<p>Most of these are written in Python but I neither want to spend time managing virtual environments nor global dependencies.
-Fortunately, <a
-  href="https://docs.astral.sh/uv/guides/scripts/#using-a-shebang-to-create-an-executable-file"
-    target="_blank"
-  >uv scripts</a> are an excellent tool for the job since they automatically create an virtual environment for the script but cache dependencies to not having to install all depencencies for every additional script.</p>
-<p>The remaining question is how to launch those scripts.
-An obvious answer would be to use a terminal but opening an extra terminal window was too much friction for me (even when using Quake-like terminals such as Ghostty&rsquo;s <a
-  href="https://hachyderm.io/@mitchellh/113222119716853963"
-    target="_blank"
-  >Quick Terminal</a>).
-The perfect solution for me are Raycast&rsquo;s <a
-  href="https://www.raycast.com/blog/getting-started-with-script-commands"
-    target="_blank"
-  >Script Commands</a>.
-Since I&rsquo;m already using Raycast for many of its features, this didn&rsquo;t require me to install additional software but instead allows me to run commands conveniently from a familiar interface.</p>
-<p>This post will provide a full walkthrough on how to use uv and Raycast to launch arbitrary Python scripts using a command bar interface.</p>
-
-<h2 class="relative group">Prerequisites 
-    <div id="prerequisites" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#prerequisites" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>To use custom scripts with Raycast, all you have to do is tell it where those scripts are located.
-To do so, open <strong>Raycast Settings</strong>, <strong>Add New</strong>, <strong>Add Script Directory</strong>.
-Then, the directory on your machine where you want to store the files.</p>
-
-<h2 class="relative group">Creating a new script 
-    <div id="creating-a-new-script" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#creating-a-new-script" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>For new scripts, I always use the following template which covers all required boilerplate code and let&rsquo;s you get straight to coding the actual functionality.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/env -S uv run</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># @raycast.schemaVersion 1</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># @raycast.title Copy Markdown Link</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># @raycast.mode silent</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># </span>
-</span></span><span class="line"><span class="cl"><span class="c1"># /// script</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># dependencies = [</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#   &#34;some-dependency==1.0.0&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># ]</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># ///</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># TODO: Put your code here!</span>
-</span></span></code></pre></div><p>The first line makes it a <a
-  href="https://docs.astral.sh/uv/guides/scripts/#using-a-shebang-to-create-an-executable-file"
-    target="_blank"
-  >uv script</a> and lets you execute it with <code>./my_script.py</code> instead of requiring to add <code>python</code> or <code>uv run</code> (make sure to adjust the permissions with <code>chmod u+x my_script</code>).</p>
-<p>Next, the comments with <code>@raycast</code> add the required metadata for the script to be run as a Raycast script:</p>
+<p>The other day, I was wondering whether I could use AI to generate custom audio books based on existing documents like PDFs.
+While professionally recorded audiobooks already exist for most books, I wanted to have something more customizable where you could for example only use chapter summaries instead of the full chapter.
+Also, I wanted the audiobooks to be in the <code>m4b</code> format which comes as a single file but still supports chapters for easier navigation (unlike <code>wav</code> or <code>mp3</code>).</p>
+<p>To achieve this, I had to solve the following parts:</p>
 <ul>
-<li><code>@raycast.schemaVersion</code> adds the schema version and for the time being should always be <code>1</code>.</li>
-<li><code>@raycast.title</code> sets the title to be displayed in Raycast.</li>
-<li><code>@raycast.mode</code> defines how the output of the script is displayed in Raycast. For details see <a
-  href="https://github.com/raycast/script-commands/blob/master/documentation/OUTPUTMODES.md"
-    target="_blank"
-  >Output Modes</a>.</li>
+<li>Extract relevant content from the source text.</li>
+<li>Split the content into chapters.</li>
+<li>Create audio for each chapter.</li>
+<li>Merge all chapters into a single audiobook.</li>
 </ul>
-<p>Then, the <code>/// script</code> block is used by uv to define dependencies and the required Python version can also be set here.
-While exact versions for dependencies are optional, they are recommended to make the script more reproducible independent of what systems it is run on.</p>
-<p>Bonus tip: Create a <a
-  href="https://manual.raycast.com/snippets"
+<p>The final project can be found on GitHub: <a
+  href="https://github.com/floscha/gemini-audiobook-generator"
     target="_blank"
-  >Raycast Snippet</a> for the template to quickly create future scripts.</p>
+  >floscha/gemini-audiobook-generator</a></p>
+<p>The goal of this post is not to walk you through the full implementation but rather discuss some things I found easier and some I found more challenging while developing this project.</p>
 
-<h2 class="relative group">Using the script 
-    <div id="using-the-script" class="anchor"></div>
+<h2 class="relative group">What Just Worked 
+    <div id="what-just-worked" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#using-the-script" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#what-just-worked" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>When saving the script to the earlier defined script directory, Raycast will automatically find it by searching for the text you&rsquo;ve used for <code>@raycast.title</code>.
-You can then also find it in <strong>Settings</strong> under <strong>Extensions</strong> where you can assign a hotkey to the script.</p>
 
-<h2 class="relative group">Full Example 
-    <div id="full-example" class="anchor"></div>
+<h3 class="relative group">Gemini API 
+    <div id="gemini-api" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#full-example" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#gemini-api" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>To use Google&rsquo;s Gemini AI models from Python code, you need a Gemini API key.
+Creating this key through <a
+  href="https://aistudio.google.com/"
+    target="_blank"
+  >Google AI Studio</a> was really straight-forward and only required one or two clicks.</p>
+<p>Similarly, writing the Python code to call the models went really effortlessly because of the great <a
+  href="https://ai.google.dev/gemini-api/docs/"
+    target="_blank"
+  >developer documentation</a> which has Python snippets ready for many practical use cases.
+These include processing text from PDF files and converting text to audio which I needed.
+Because of this, I was done building the core AI logic within about 5 minutes.</p>
+
+<h2 class="relative group">Challenges 
+    <div id="challenges" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#challenges" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>The following code shows the full implementation of the <em>markdown link</em> script I&rsquo;ve mentioned in the introduction.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/env -S uv run</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># @raycast.schemaVersion 1</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># @raycast.title Copy Markdown Link</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># @raycast.mode silent</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># </span>
-</span></span><span class="line"><span class="cl"><span class="c1"># /// script</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># dependencies = [</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#   &#34;sh&#34;,</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># ]</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># ///</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sh</span> <span class="kn">import</span> <span class="n">osascript</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">page_title</span> <span class="o">=</span> <span class="n">osascript</span><span class="p">(</span><span class="n">e</span><span class="o">=</span><span class="s1">&#39;tell application &#34;Google Chrome&#34; to get title of active tab of first window&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="n">page_url</span> <span class="o">=</span> <span class="n">osascript</span><span class="p">(</span><span class="n">e</span><span class="o">=</span><span class="s1">&#39;tell application &#34;Google Chrome&#34; to get URL of active tab of first window&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="n">markdown_link</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;[</span><span class="si">{</span><span class="n">page_title</span><span class="si">}</span><span class="s2">](</span><span class="si">{</span><span class="n">page_url</span><span class="si">}</span><span class="s2">)&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">osascript</span><span class="p">(</span><span class="n">e</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;set the clipboard to &#34;</span><span class="si">{</span><span class="n">markdown_link</span><span class="si">}</span><span class="s1">&#34;&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;📋 Successfully copied </span><span class="si">{</span><span class="n">markdown_link</span><span class="si">}</span><span class="s2"> to clipboard.&#34;</span><span class="p">)</span>
-</span></span></code></pre></div>
+
+<h3 class="relative group">Prompting 
+    <div id="prompting" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#prompting" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Writing the prompt to preprocess the source document into customized chapters turned out to be slightly more challenging than I initially thought.</p>
+<p>For example, I use a simple heuristic where I take the first line of a chapter as the chapter name.
+Unfortunately, this does not work for some formatting like the one below.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">Chapter 1
+</span></span><span class="line"><span class="cl">Name of the Chapter
+</span></span></code></pre></div><p>To make the heuristic work, I&rsquo;ve added the following prompt:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">Keep the heading in a single line.
+</span></span></code></pre></div><p>This usually does the trick, but due to the probabilistic nature of LLMs, issues can still occur, for example dropping the <code>Chapter 1</code> part of the example above.</p>
+
+<h3 class="relative group">Reusing Intermediate Files 
+    <div id="reusing-intermediate-files" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#reusing-intermediate-files" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>While running the whole script from source might work for other tools, it is much more practical to store intermediate files from which the script can recover in case of failure or to speed up experimentation during development.</p>
+<p>Even though the Gemini free tier is really generous, a medium-sized PDF file can quickly result in 100k tokens per request, leading to higher than desirable token consumption.
+Creating the audio files on the other hand was not as token-expensive but took multiple minutes, leading to slower development speed.</p>
+<p>The simple solution to this problem was to provide a <code>keep_intermediate_files</code> option which can be used during development.
+When turned on, intermediate files are kept and when re-running the script, it would recover from those files, rather than starting from scratch.</p>
+
+<h3 class="relative group">Merging Audio Files 
+    <div id="merging-audio-files" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#merging-audio-files" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>After the AI-specific code was implemented rather quickly, writing the code to merge the audio files for the individual chapters into a combined <code>m4b</code> file turned out to be much more tedious.
+This is mainly due to the fact that no Python library with this functionality exists.</p>
+<p>Instead, I had to fall back to using <a
+  href="https://github.com/FFmpeg/FFmpeg"
+    target="_blank"
+  >ffmpeg</a> through <code>subprocess</code> calls.
+Even worse, this approach required generating lots of hacky metadata files through Python, which took me a couple of tries to get right.</p>
+<p>Finally, I see the lack of a Python <code>m4b</code> converter as an opportunity to create one myself which I might do in the near future.</p>
+
           
           
           
@@ -718,8 +707,8 @@ You can then also find it in <strong>Settings</strong> under <strong>Extensions<
           type="text/javascript"
           src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts/uv-scripts-with-raycast.md"
-          data-oid-likes="likes_posts/uv-scripts-with-raycast.md"></script>
+          data-oid="views_posts/building-an-audiobook-generator.md"
+          data-oid-likes="likes_posts/building-an-audiobook-generator.md"></script>
       
     </section>
 
@@ -735,7 +724,7 @@ You can then also find it in <strong>Settings</strong> under <strong>Extensions<
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/study-with-ai/">
+            <a class="flex group mr-3" href="/posts/uv-scripts-with-raycast/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -746,11 +735,11 @@ You can then also find it in <strong>Settings</strong> under <strong>Extensions<
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >How I Study With AI</span
+                  >Using uv Scripts with Raycast</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-08-15T00:00:00&#43;00:00">15 August 2025</time>
+                    <time datetime="2025-08-17T00:00:00&#43;00:00">17 August 2025</time>
                   
                 </span>
               </span>
@@ -758,27 +747,6 @@ You can then also find it in <strong>Settings</strong> under <strong>Extensions<
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/building-an-audiobook-generator/">
-              <span class="flex flex-col">
-                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Building an Audiobook Generator With Google Gemini</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-08-19T00:00:00&#43;00:00">19 August 2025</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
