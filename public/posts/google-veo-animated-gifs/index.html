@@ -14,15 +14,15 @@
   <meta name="theme-color">
 
   
-  <title>Things to Keep in Mind When Building Web Apps for Phones &middot; floscha.dev</title>
-    <meta name="title" content="Things to Keep in Mind When Building Web Apps for Phones &middot; floscha.dev">
+  <title>Using Google Veo to Create Animated GIFs &middot; floscha.dev</title>
+    <meta name="title" content="Using Google Veo to Create Animated GIFs &middot; floscha.dev">
 
   
   <meta name="description" content="My awesome website">
   
   
   
-  <link rel="canonical" href="http://localhost:1313/posts/web-app-for-phones/">
+  <link rel="canonical" href="http://localhost:1313/posts/google-veo-animated-gifs/">
   
   
   
@@ -90,19 +90,19 @@
   
 
   
-  <meta property="og:url" content="http://localhost:1313/posts/web-app-for-phones/">
+  <meta property="og:url" content="http://localhost:1313/posts/google-veo-animated-gifs/">
   <meta property="og:site_name" content="floscha.dev">
-  <meta property="og:title" content="Things to Keep in Mind When Building Web Apps for Phones">
+  <meta property="og:title" content="Using Google Veo to Create Animated GIFs">
   <meta property="og:description" content="My awesome website">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-08-22T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-08-22T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-08-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-08-24T00:00:00+00:00">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Things to Keep in Mind When Building Web Apps for Phones">
+  <meta name="twitter:title" content="Using Google Veo to Create Animated GIFs">
   <meta name="twitter:description" content="My awesome website">
 
   <script type="application/ld+json">
@@ -110,26 +110,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Things to Keep in Mind When Building Web Apps for Phones",
-    "headline": "Things to Keep in Mind When Building Web Apps for Phones",
+    "name": "Using Google Veo to Create Animated GIFs",
+    "headline": "Using Google Veo to Create Animated GIFs",
     
     
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/posts\/web-app-for-phones\/",
+    "url" : "http:\/\/localhost:1313\/posts\/google-veo-animated-gifs\/",
     "author" : {
       "@type": "Person",
       "name": "Florian Schäfer"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-08-22T00:00:00\u002b00:00",
-    "datePublished": "2025-08-22T00:00:00\u002b00:00",
+    "dateCreated": "2025-08-24T00:00:00\u002b00:00",
+    "datePublished": "2025-08-24T00:00:00\u002b00:00",
     
-    "dateModified": "2025-08-22T00:00:00\u002b00:00",
+    "dateModified": "2025-08-24T00:00:00\u002b00:00",
     
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "327"
+    "wordCount": "474"
   }]
   </script>
 
@@ -404,7 +404,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Things to Keep in Mind When Building Web Apps for Phones
+        Using Google Veo to Create Animated GIFs
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -455,7 +455,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-08-22T00:00:00&#43;00:00">22 August 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+      <time datetime="2025-08-24T00:00:00&#43;00:00">24 August 2025</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
     
 
     
@@ -499,76 +499,173 @@
     </span>        
     
 </h2>
-<p>When <a
-  href="http://localhost:1313/posts/free-tabata/">building the Free Tabata app</a> recently, it was immediately clear to me that this app was designed to be primarily used on mobile devices.
-While all such devices come with a pre-installed browser that can open the web app, the user experience isn&rsquo;t guaranteed to match that of laptops or desktop computers, which come with a physical keyboard and larger screens.</p>
-<p>This post serves as a collection of things to keep in mind when developing such apps.</p>
+<p>I recently had the idea that the hero image from <a
+  href="https://floscha.dev"
+    target="_blank"
+  >my homepage</a> and <a
+  href="https://github.com/floscha"
+    target="_blank"
+  >my GitHub profile</a> would be more engaging if it were animated instead of static.
+Since I&rsquo;m not an expert in animation, I wondered if an image-to-video model like Google&rsquo;s <a
+  href="https://deepmind.google/models/veo/"
+    target="_blank"
+  >Veo</a> could handle the animation task for me.</p>
+<p>This post is a walkthrough for getting from my hero image below to an animated GIF of it.</p>
+<p>
 
-<h2 class="relative group">Be mindful of whitespace 
-    <div id="be-mindful-of-whitespace" class="anchor"></div>
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="hero"
+    srcset="
+      /hero_hu_762fc6443cd0e655.png  330w,
+      /hero_hu_ece589a18c35476d.png  660w,
+      /hero_hu_57fd5e1679972df6.png 1280w
+    "
+    data-zoom-src="/hero.png"
+    src="/hero.png">
+
+  
+</figure>
+</p>
+
+<h2 class="relative group">The Steps 
+    <div id="the-steps" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#be-mindful-of-whitespace" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#the-steps" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>While generous whitespace looks great on larger screens, it can easily become tedious on mobile devices when users have to constantly scroll to reach parts of the application, or when content isn&rsquo;t even visible because it&rsquo;s placed outside of the screen boundaries.</p>
 
-<h2 class="relative group">Don&rsquo;t rely on keys 
-    <div id="dont-rely-on-keys" class="anchor"></div>
+<h3 class="relative group">Correct the Aspect Ratio 
+    <div id="correct-the-aspect-ratio" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#dont-rely-on-keys" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#correct-the-aspect-ratio" aria-label="Anchor">#</a>
     </span>        
     
-</h2>
-<p>Technically, it&rsquo;s possible to connect a Bluetooth keyboard to mobile devices and use hotkeys.
-In practice, however, users rarely do this.
-Instead, make sure all functionality is accessible through taps and think of hotkeys only as a feature for power users.</p>
+</h3>
+<p>Veo supports only two aspect ratios:</p>
+<ul>
+<li>16:9</li>
+<li>9:16</li>
+</ul>
+<p>Therefore, use an image editing tool (<a
+  href="https://www.photopea.com/"
+    target="_blank"
+  >Photopea</a> if you have nothing installed) and use the <strong>Canvas Size</strong> setting to change the ratio of your image to one of the above.</p>
 
-<h2 class="relative group">Add an apple-touch-icon 
-    <div id="add-an-apple-touch-icon" class="anchor"></div>
+<h3 class="relative group">Mask Transparent Sections 
+    <div id="mask-transparent-sections" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#add-an-apple-touch-icon" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#mask-transparent-sections" aria-label="Anchor">#</a>
     </span>        
     
-</h2>
-<p>One great trend in web apps recently is building them as <a
-  href="https://en.wikipedia.org/wiki/Progressive_web_app"
-    target="_blank"
-  >Progressive Web Apps (PWAs)</a>.
-iOS devices, for example, provide an &ldquo;Add to Home Screen&rdquo; function that lets you add an icon to your home screen just like regular apps.
-This doesn&rsquo;t use the site&rsquo;s favicon, however, but requires a dedicated <code>apple-touch-icon</code> which can be included in HTML like so:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;apple-touch-icon&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;favicon.png&#34;</span><span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>Tip: Sites like <a
-  href="https://favicon.io/"
-    target="_blank"
-  >favicon.io</a> make creating different favicon types much more convenient.</p>
+</h3>
+<p>Unfortunately, Veo doesn&rsquo;t support transparency.
+If you upload an image with a transparent background, Veo will simply turn the transparent sections black. As a workaround, similar to green screens, we can mask the transparent sections with a dedicated color like green (<code>#00FF00</code>) and later remove this color during post-processing.</p>
 
-<h2 class="relative group">Consider a Wake Lock 
-    <div id="consider-a-wake-lock" class="anchor"></div>
+<h3 class="relative group">Use Veo on AI Studio to Generate the Video 
+    <div id="use-veo-on-ai-studio-to-generate-the-video" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#consider-a-wake-lock" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#use-veo-on-ai-studio-to-generate-the-video" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>In <a
+  href="https://aistudio.google.com/"
+    target="_blank"
+  >Google AI Studio</a>, go to <strong>Generate Media &gt; Animated Scene For Looping</strong>.
+There, upload your image and add a prompt similar to this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">Make the person on the image type.
+</span></span><span class="line"><span class="cl">Make their eyes slightly go from side to side as when following text on the screen.
+</span></span><span class="line"><span class="cl">Make the coffee cup steam.
+</span></span><span class="line"><span class="cl">Gently wave the leaves of the plant from side to side.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Make sure the video can be looped continuously.
+</span></span></code></pre></div><p>Finally, press run to generate the video and once it&rsquo;s done, download the <code>.mp4</code> file from AI Studio.</p>
+
+<h3 class="relative group">Convert MP4 to GIF 
+    <div id="convert-mp4-to-gif" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#convert-mp4-to-gif" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>With <a
+  href="https://github.com/FFmpeg/FFmpeg"
+    target="_blank"
+  >ffmpeg</a> installed, run the command below to convert the <code>.mp4</code> file to a <code>.gif</code> file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="s2">&#34;fps=10,scale=480:-1:flags=lanczos&#34;</span> -c:v gif output.gif
+</span></span></code></pre></div><p>If you prefer an online tool, you can also use <a
+  href="https://ezgif.com/"
+    target="_blank"
+  >Ezgif</a> from the next section in this post.</p>
+
+<h3 class="relative group">Make Background Transparent Again 
+    <div id="make-background-transparent-again" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#make-background-transparent-again" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>After unfortunately not getting <a
+  href="https://github.com/ImageMagick/ImageMagick"
+    target="_blank"
+  >ImageMagick</a> to work with <code>magick input.gif -transparent '#00ff00' output.gif</code>, I decided to go with the online tool <a
+  href="https://ezgif.com/"
+    target="_blank"
+  >Ezgif</a>.</p>
+<p>There, you can go to <strong>Effects</strong>, upload an image, and go to the <strong>Remove background</strong> tab.
+In the <strong>Replace the background color with transparency</strong> section, select <strong>custom (HEX)</strong> with the value <code>#00ff00</code> (or whatever color you chose as a transparency mask).</p>
+<p>You&rsquo;ll notice that the GIF will still have many green parts around the edges.
+This is because Veo also introduces some noise during the generation process.
+To deal with this, play around with the <strong>Fuzz %</strong> value (<code>38</code> worked well in my case).
+Once you&rsquo;re happy with the result, download the GIF from the <strong>Output image</strong> section.</p>
+
+<h2 class="relative group">The Result 
+    <div id="the-result" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#the-result" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Usually, phones and tablets are configured to turn off their screens to save energy much sooner than desktop devices.
-This can prove especially annoying for use cases like <a
-  href="https://en.wikipedia.org/wiki/High-intensity_interval_training#Tabata_regimen"
-    target="_blank"
-  >Tabata training</a>, where the screen should stay on for the multiple minutes of the workout.</p>
-<p>Fortunately, modern browsers provide a <a
-  href="https://developer.mozilla.org/en-US/docs/Web/API/WakeLock"
-    target="_blank"
-  >Wake Lock</a> API that can prevent the device from turning off its screen as long as the lock is active.</p>
+<p>This is what the final result looks like:</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="hero" src="https://github.com/user-attachments/assets/5978019b-01a1-4e34-a910-8ac7030fdea4">
+
+  
+</figure>
+</p>
+<p>Unfortunately, the GIF is still rough around the edges from the background removal, but other than that, I&rsquo;m really pleased with the result.</p>
 
           
           
@@ -671,8 +768,8 @@ This can prove especially annoying for use cases like <a
           type="text/javascript"
           src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts/web-app-for-phones.md"
-          data-oid-likes="likes_posts/web-app-for-phones.md"></script>
+          data-oid="views_posts/google-veo-animated-gifs.md"
+          data-oid-likes="likes_posts/google-veo-animated-gifs.md"></script>
       
     </section>
 
@@ -688,7 +785,7 @@ This can prove especially annoying for use cases like <a
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/free-tabata/">
+            <a class="flex group mr-3" href="/posts/web-app-for-phones/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -699,11 +796,11 @@ This can prove especially annoying for use cases like <a
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Why I Built a Free Tabata App</span
+                  >Things to Keep in Mind When Building Web Apps for Phones</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-08-20T00:00:00&#43;00:00">20 August 2025</time>
+                    <time datetime="2025-08-22T00:00:00&#43;00:00">22 August 2025</time>
                   
                 </span>
               </span>
@@ -711,27 +808,6 @@ This can prove especially annoying for use cases like <a
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/google-veo-animated-gifs/">
-              <span class="flex flex-col">
-                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Using Google Veo to Create Animated GIFs</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-08-24T00:00:00&#43;00:00">24 August 2025</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
