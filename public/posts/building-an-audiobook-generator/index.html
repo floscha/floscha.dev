@@ -129,7 +129,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "606"
+    "wordCount": "596"
   }]
   </script>
 
@@ -499,9 +499,9 @@
     </span>        
     
 </h2>
-<p>The other day, I was wondering whether I could use AI to generate custom audio books based on existing documents like PDFs.
-While professionally recorded audiobooks already exist for most books, I wanted to have something more customizable where you could for example only use chapter summaries instead of the full chapter.
-Also, I wanted the audiobooks to be in the <code>m4b</code> format which comes as a single file but still supports chapters for easier navigation (unlike <code>wav</code> or <code>mp3</code>).</p>
+<p>The other day, I was wondering whether I could use AI to generate custom audiobooks based on existing documents like PDFs.
+While professionally recorded audiobooks already exist for most books, I wanted something more customizable where you could, for example, use only chapter summaries instead of the full chapters.
+I also wanted the audiobooks to be in the <code>m4b</code> format, which comes as a single file but still supports chapters for easier navigation (unlike <code>wav</code> or <code>mp3</code>).</p>
 <p>To achieve this, I had to solve the following parts:</p>
 <ul>
 <li>Extract relevant content from the source text.</li>
@@ -513,7 +513,7 @@ Also, I wanted the audiobooks to be in the <code>m4b</code> format which comes a
   href="https://github.com/floscha/gemini-audiobook-generator"
     target="_blank"
   >floscha/gemini-audiobook-generator</a></p>
-<p>The goal of this post is not to walk you through the full implementation but rather discuss some things I found easier and some I found more challenging while developing this project.</p>
+<p>The goal of this post isn&rsquo;t to walk you through the full implementation but rather to discuss some things I found easier and some I found more challenging while developing this project.</p>
 
 <h2 class="relative group">What Just Worked 
     <div id="what-just-worked" class="anchor"></div>
@@ -538,13 +538,13 @@ Also, I wanted the audiobooks to be in the <code>m4b</code> format which comes a
 Creating this key through <a
   href="https://aistudio.google.com/"
     target="_blank"
-  >Google AI Studio</a> was really straight-forward and only required one or two clicks.</p>
-<p>Similarly, writing the Python code to call the models went really effortlessly because of the great <a
+  >Google AI Studio</a> was really straightforward and required only one or two clicks.</p>
+<p>Similarly, writing the Python code to call the models was effortless because of the excellent <a
   href="https://ai.google.dev/gemini-api/docs/"
     target="_blank"
-  >developer documentation</a> which has Python snippets ready for many practical use cases.
-These include processing text from PDF files and converting text to audio which I needed.
-Because of this, I was done building the core AI logic within about 5 minutes.</p>
+  >developer documentation</a>, which has Python snippets ready for many practical use cases.
+These include processing text from PDF files and converting text to audio—exactly what I needed.
+Because of this, I was able to build the core AI logic within about 5 minutes.</p>
 
 <h2 class="relative group">Challenges 
     <div id="challenges" class="anchor"></div>
@@ -567,12 +567,12 @@ Because of this, I was done building the core AI logic within about 5 minutes.</
 </h3>
 <p>Writing the prompt to preprocess the source document into customized chapters turned out to be slightly more challenging than I initially thought.</p>
 <p>For example, I use a simple heuristic where I take the first line of a chapter as the chapter name.
-Unfortunately, this does not work for some formatting like the one below.</p>
+Unfortunately, this doesn&rsquo;t work for some formatting like the one below.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">Chapter 1
 </span></span><span class="line"><span class="cl">Name of the Chapter
-</span></span></code></pre></div><p>To make the heuristic work, I&rsquo;ve added the following prompt:</p>
+</span></span></code></pre></div><p>To make the heuristic work, I added the following prompt:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">Keep the heading in a single line.
-</span></span></code></pre></div><p>This usually does the trick, but due to the probabilistic nature of LLMs, issues can still occur, for example dropping the <code>Chapter 1</code> part of the example above.</p>
+</span></span></code></pre></div><p>This usually does the trick, but due to the probabilistic nature of LLMs, issues can still occur—for example, dropping the <code>Chapter 1</code> part of the example above.</p>
 
 <h3 class="relative group">Reusing Intermediate Files 
     <div id="reusing-intermediate-files" class="anchor"></div>
@@ -583,11 +583,11 @@ Unfortunately, this does not work for some formatting like the one below.</p>
     </span>        
     
 </h3>
-<p>While running the whole script from source might work for other tools, it is much more practical to store intermediate files from which the script can recover in case of failure or to speed up experimentation during development.</p>
+<p>While running the whole script from scratch might work for other tools, it&rsquo;s much more practical to store intermediate files from which the script can recover in case of failure or to speed up experimentation during development.</p>
 <p>Even though the Gemini free tier is really generous, a medium-sized PDF file can quickly result in 100k tokens per request, leading to higher than desirable token consumption.
-Creating the audio files on the other hand was not as token-expensive but took multiple minutes, leading to slower development speed.</p>
-<p>The simple solution to this problem was to provide a <code>keep_intermediate_files</code> option which can be used during development.
-When turned on, intermediate files are kept and when re-running the script, it would recover from those files, rather than starting from scratch.</p>
+Creating the audio files, on the other hand, wasn&rsquo;t as token-expensive but took several minutes, leading to slower development speed.</p>
+<p>The simple solution to this problem was to provide a <code>keep_intermediate_files</code> option that can be used during development.
+When turned on, intermediate files are kept, and when re-running the script, it recovers from those files rather than starting from scratch.</p>
 
 <h3 class="relative group">Merging Audio Files 
     <div id="merging-audio-files" class="anchor"></div>
@@ -604,8 +604,8 @@ This is mainly due to the fact that no Python library with this functionality ex
   href="https://github.com/FFmpeg/FFmpeg"
     target="_blank"
   >ffmpeg</a> through <code>subprocess</code> calls.
-Even worse, this approach required generating lots of hacky metadata files through Python, which took me a couple of tries to get right.</p>
-<p>Finally, I see the lack of a Python <code>m4b</code> converter as an opportunity to create one myself which I might do in the near future.</p>
+Even worse, this approach required generating lots of hacky metadata files through Python, which took me several tries to get right.</p>
+<p>Finally, I see the lack of a Python <code>m4b</code> converter as an opportunity to create one myself, which I might do in the near future.</p>
 
           
           
